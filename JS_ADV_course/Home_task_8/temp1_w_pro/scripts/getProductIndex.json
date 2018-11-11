@@ -1,0 +1,74 @@
+[
+  {
+    "id": 111,
+    "title": "MANGO PEOPLE T-SHIRT",
+    "price": 52,
+    "img": "img/Layer_2.jpg",
+    "shipping": "FREE",
+    "color": "Red",
+    "size": "Xll"
+  },
+  {
+    "id": 112,
+    "title": "MANGO PEOPLE T-SHIRT",
+    "price": 55,
+    "img": "img/Layer_3.jpg",
+    "shipping": "FREE",
+    "color": "Red",
+    "size": "Xll"
+  },
+  {
+    "id": 113,
+    "title": "MANGO PEOPLE T-SHIRT",
+    "price": 61,
+    "img": "img/Layer_4.jpg",
+    "shipping": "FREE",
+    "color": "Red",
+    "size": "Xll"
+  },
+  {
+    "id": 114,
+    "title": "MANGO PEOPLE T-SHIRT",
+    "price": 42,
+    "img": "img/Layer_5.jpg",
+    "shipping": "FREE",
+    "color": "Red",
+    "size": "Xll"
+  },
+  {
+    "id": 115,
+    "title": "MANGO PEOPLE T-SHIRT",
+    "price": 37,
+    "img": "img/Layer_6.jpg",
+    "shipping": "FREE",
+    "color": "Red",
+    "size": "Xll"
+  },
+  {
+    "id": 116,
+    "title": "MANGO PEOPLE T-SHIRT",
+    "price": 25,
+    "img": "img/Layer_7.jpg",
+    "shipping": "FREE",
+    "color": "Red",
+    "size": "Xll"
+  },
+  {
+    "id": 117,
+    "title": "MANGO PEOPLE T-SHIRT",
+    "price": 48,
+    "img": "img/Layer_8.jpg",
+    "shipping": "FREE",
+    "color": "Red",
+    "size": "Xll"
+  },
+  {
+    "id": 118,
+    "title": "MANGO PEOPLE T-SHIRT",
+    "price": 70,
+    "img": "img/Layer_9.jpg",
+    "shipping": "FREE",
+    "color": "Red",
+    "size": "Xll"
+  }
+]

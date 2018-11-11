@@ -1,0 +1,17 @@
+[
+  {
+    "id_comment": 123,
+    "user_name": "Ann",
+    "feedback": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda distinctio itaque natus sed tenetur. Fugit hic incidunt ipsam laudantium maxime nisi odio perferendis repudiandae ullam ut. Expedita minus sunt tenetur?"
+  },
+  {
+    "id_comment": 124,
+    "user_name": "Tom",
+    "feedback": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab blanditiis enim facere fugiat, hic ipsum maiores molestiae necessitatibus quo tempore? Asperiores illo laboriosam natus, quo sunt totam. Corporis praesentium, sed."
+  },
+  {
+    "id_comment": 125,
+    "user_name": "Dennis",
+    "feedback": "Lorem s non optio recusandae repudiandae, ullam veniam vitae voluptatibus."
+  }
+]

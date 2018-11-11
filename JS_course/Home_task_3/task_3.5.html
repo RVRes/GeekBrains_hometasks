@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_Task_3.5</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    /* Урок 3, задание 4:
+
+     Дан массив (создать такой же, с такими же значениями):
+
+     const arr = [
+     [2, 4, 6],
+     [1, 5, 10],
+     [7, 4, 1],
+     ];
+
+     Задания:
+     1. Найти массив, у которого сумма всех чисел максимальна, вывести в console.log индекс этого массива.
+     2. Получить и вывести в console.log минимальное значение найденное в массиве, который мы получили в первом пункте.
+
+     */
+    const arr = [
+        [2, 4, 6],
+        [1, 5, 10],
+        [7, 4, 1],
+    ];
+
+    console.log(getIndexOfMaxSumInArray(arr)); // здесь индекс массива с большей суммой (задание 1)
+    console.log(getMinOfElements(arr[getIndexOfMaxSumInArray(arr)])); // Здесь мин. значение из массива (задание 2)
+
+    /**
+     * Функция возвращает идекс одномерного массива с максимальной суммой в двумерном, начиная с нуля
+     * @param {number[]} arr двумерный массив чисел
+     * @returns {number} индекс массива с максимальной суммой внутри двумерного
+     */
+    function getIndexOfMaxSumInArray(arr) {
+        let index = 0, maxSum = -Infinity;
+        for (const key in arr) {
+            if (maxSum < getSumOfElements(arr[key])) {
+                index = key;
+                maxSum = getSumOfElements(arr[key]);
+            }
+        }
+        return index;
+    }
+
+    /**
+     * Функция возвращает сумму элементов массива.
+     * @param {number[]} arr Массив, сумма элементов которого вернет функция.
+     * @returns {number} Сумма элементов массива.
+     */
+    function getSumOfElements(arr) {
+        let sum = 0;
+        for (const val of arr) {
+            sum += val;
+        }
+        return sum;
+    }
+
+    /**
+     * Функция возвращает минимальное значение из элементов массива.
+     * @param {number[]} arr Массив, сумма элементов которого вернет функция.
+     * @returns {number} минимальное значение в массиве
+     */
+    function getMinOfElements(arr) {
+        let min = Infinity;
+        for (const val of arr) {
+            if (val < min) {
+                min = val;
+            }
+        }
+        return min;
+    }
+
+</script>
+</body>
+</html>

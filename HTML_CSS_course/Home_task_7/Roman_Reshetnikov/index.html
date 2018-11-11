@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testbootstrap</title>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
+          integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+    <!-- Последняя компиляция и сжатый css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Дополнение к теме -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style_testbootstrap.css">
+
+</head>
+<body>
+<div class="layout">
+    <header id="section_header" class="navbar-top main-nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <!--<span class="sr-only">Toggle navigation</span>-->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/keystone_logo.png" alt="">
+                </a>
+            </div>
+            <nav class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#service">Разработка web-сайтов </a></li>
+                    <li class="dropdown hidden-xs hidden-sm">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Наши услуги</a>
+                        <ul id="service-menu" class="dropdown-menu">
+                            <li><a href="#">Консультационные услуги</a></li>
+                            <li><a href="#">Бухгалтерские услуги</a></li>
+                            <li><a href="#it-service">IT услуги</a></li>
+                        </ul>
+                    </li>
+                    <li class="hidden-lg hidden-md hidden-sm"><a href="#">Консультационные услуги</a></li>
+                    <li class="hidden-lg hidden-md hidden-sm"><a href="#">Бухгалтерские услуги</a></li>
+                    <li class="hidden-lg hidden-md hidden-sm"><a href="#it-service">IT услуги</a></li>
+                    <li><a href="#blog">Проектная работа </a></li>
+                    <li><a href="#techsupport">Техническая поддержка</a></li>
+                    <li><a href="#footer">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Slider start -->
+    <section id="slider_part">
+        <div class="carousel slide" id="carousel-example-generic" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators text-center">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="overlay-slide">
+                        <img src="images/slider/p5.jpg" alt="" class="img-responsive">
+                    </div>
+                    <div class="carousel-caption">
+                        <div class="col-md-12 col-xs-12 text-center">
+                            <h2>KEYStone</h2>
+                            <h3 class="animated2"><b>Креативно</b> современно и уникально </h3>
+                            <div class="line"></div>
+                            <p class="animated3">Уникальный дизайн</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="overlay-slide">
+                        <img src="images/slider/p4.jpg" alt="" class="img-responsive">
+                    </div>
+                    <div class="carousel-caption">
+                        <div class="col-md-12 col-xs-12 text-center">
+                            <h2>KEYStone</h2>
+                            <h3 class="animated3"> Отзывчивый <b>дизайн</b></h3>
+                            <div class="line"></div>
+                            <p class="animated2">лучший выбор</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="overlay-slide">
+                        <img src="images/slider/p3.jpg" alt="" class="img-responsive">
+                    </div>
+                    <div class="carousel-caption">
+                        <div class="col-md-12 col-xs-12 text-center">
+                            <h2>KEYStone</h2>
+                            <h3 class="animated3"> Мы сумасшедшие <b>программисты</b></h3>
+                            <div class="line"></div>
+                            <p class="animated2"> путь к успеху</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>     <!-- End Carousel Inner -->
+
+            <!-- Controls -->
+            <div class="slides-control ">
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span><i class="fa fa-angle-left"></i></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span><i class="fa fa-angle-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--/ Slider end -->
+
+    <!-- Service Area start -->
+    <section id="service">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="feature_header text-center">
+                        <h3 class="feature_title">Разработка <b>Web</b> - сайтов</h3>
+                        <h4 class="feature_sub">Мы - команда молодых, но опытных профессионалов <br>Вы можете доверить
+                            нам
+                            создание вашего сайта "Под ключ". Так же работаем в качестве аутсорсеров</h4>
+                        <div class="divider"></div>
+                    </div>
+                </div>  <!-- Col-md-12 End -->
+            </div>
+            <div class="row">
+                <div class="main_feature text-center">
+                    <div class="col-md-4 col-xs-12 col-sm-6">
+                        <div class="feature_content">
+                            <i class="fa fa-cog"></i>
+                            <h5>Cайты любой сложности</h5>
+                            <p>Наша команда профессиональных разработчиков создаст сайт любой сложности для Вашей
+                                компании</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 col-sm-6">
+                        <div class="feature_content">
+                            <i class="fa fa-desktop"></i>
+                            <h5>Корпоративные порталы</h5>
+                            <p>Если вашей оранигазии нужен портал - наша команда создаст его в необходимые сроки</p>
+                        </div>
+                    </div> <!-- Col-md-4 Single_feature End -->
+                    <div class="col-md-4 col-xs-12 col-sm-6">
+                        <div class="feature_content">
+                            <i class="far fa-lightbulb"></i>
+                            <h5>Модули и решения на базе LEMP</h5>
+                            <p>LEMP - это набор популярного открытого серверного программного обеспечения, необходимого
+                                для
+                                работы динамических веб-сайтов и веб-приложений.</p>
+                        </div>
+                    </div> <!-- Col-md-4 Single_feature End -->
+
+                    <!-- <button class="btn btn-main"> Read More</button> -->
+                </div>
+            </div>  <!-- Row End -->
+        </div>  <!-- Container End -->
+    </section>
+    <!-- Service Area End -->
+
+
+    <!-- bLOG Start -->
+    <section id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="feature_header text-center">
+                        <h3 class="feature_title">Проектная <b>работа</b></h3>
+                        <h4 class="feature_sub">Выполняем проектную работу </h4>
+                        <div class="divider"></div>
+                    </div>
+                </div>  <!-- Col-md-12 End -->
+            </div>
+            <div class="row">
+                <div class="blog-timeline">
+                    <div class="item col-lg-6 col-md-6 col-sm-6">
+                        <div class="single_blog">
+                            <div class="post_img text-center">
+                                <a href="#"><img src="images/blog/pic2.jpg" alt="" class="img-responsive"></a>
+                            </div>
+                            <a href="#"><h4>Выполнение проектов по интеграции WMS, Портал, КИС</h4></a>
+                            <p>Корпоративная информационная система
+                                (КИС) является составной частью IT-инфраструктуры. Она включает базы
+                                данных, информационные центры, системы связи. От того, насколько
+                                грамотно построена КИС, зависит эффективность работы компании.</p>
+                        </div>
+                    </div>
+                    <div class="item col-lg-6 col-md-6 col-sm-6">
+                        <div class="single_blog">
+                            <div class="post_img text-center">
+                                <a href="#"><img src="images/blog/pic4.jpg" alt="" class="img-responsive"></a>
+                            </div>
+                            <a href="#"><h4>Руководство проектами внедрения на территории заказчика</h4></a>
+                            <p>Если компания одновременно ведет
+                                несколько крупных проектов, то рано или поздно она сталкивается с
+                                необходимостью внедрения единой системы управления проектами. В ходе
+                                этой работы очень важно пересмотреть организационную структуру,
+                                разработать соответствующую документацию, а также упорядочить все
+                                бизнес-процессы.</p>
+                        </div>
+                    </div>
+                </div> <!-- blog Timeline End -->
+            </div>
+        </div>
+    </section>
+    <!-- bLOG End -->
+    <!-- Technical Support -->
+    <section id="techsupport" class="techsupport">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="feature_header text-center">
+                        <h3 class="feature_title"><b>Техническая </b>поддержка</h3>
+                        <h4 class="feature_sub">Обеспечиваем техническую поддержку </h4>
+                        <div class="divider"></div>
+                    </div>
+                </div>  <!-- Col-md-12 End -->
+            </div>
+            <div class="row">
+                <div>
+                    <img class="img-circle" src="images/techsupport/pic1.png" alt="techsupport">
+                </div>
+                <div>
+                    <h3 class="name">функционал первой линии технической поддержки
+                        <span>Техническая поддержка</span></h3>
+                    <p>Техническая
+                        поддержка позволяет получить консультацию по работе системы в сжатые
+                        сроки и провести диагностику проблем UTM 5 совместно со специалистами
+                        нашей компании посредством удаленного администрирования при условии
+                        предоставления клиентом доступа по протоколу SSH.</p>
+                </div>
+            </div>
+
+
+        </div> <!-- Row End -->
+    </section> <!-- Section Techsupport End -->
+    <section id="footer" class="footer">
+        <div class="layout__footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-6 col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6">
+                        <h3>Наши контакты</h3>
+                        <div class="footer_menu_contact">
+                            <ul>
+                                <li><i class="fa fa-home"></i>
+                                    <span> 123007, Москва, ул. 4-я Магистральная, д. 5, стр. 4 </span></li>
+                                <li><i class="fa fa-globe"></i>
+                                    <span>+7 (495) 969-24-50 доб. 2008</span></li>
+                                <li><i class="fa fa-phone"></i>
+                                    <span> info@keystone.info</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- Footer Area End -->
+
+
+</div>
+
+
+<!-- на jQuery (необходим для Bootstrap - х JavaScript плагины) -->
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<!-- Последняя компиляция и сжатый JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

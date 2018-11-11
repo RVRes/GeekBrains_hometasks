@@ -1,0 +1,19 @@
+body {
+    color: blue;
+    background-image: url("https://grandgames.net/puzzle/source_p/peyzazh_5.jpg");
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.my_yellow_text {
+    color: yellow;
+}
+
+#main {
+    font-size: 16px;
+    color: rgb(100, 10, 255);
+    background-color: rgba(255, 0, 0, 0.5);
+    width: 300px;
+    height: 300px;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSAdv_Task_3.1-2</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    /* 1. Дан большой текст, в котором для обозначения диалогов используются одинарные кавычки.
+        Придумать шаблон, который меняет одинарные кавычки на двойные.
+     2. Улучшить шаблон таким образом, чтобы конструкции типа aren’t не меняли одинарную кавычку на двойную. */
+    const text = "'How come I don't get any eggs and bacon? Why don't I have any milk in my cereal?'\n"+
+        "'That's right' the guard said.\n" +
+        "'That's not her, I told you!' he shouted, pointing at the drawing.";
+    const pattern = /(^|\W)'|'(\W|$)/g;
+    console.log(`Оригинал текста:\n${text}\n\nТекст после коррекции:\n${text.replace(pattern,'$1"$2')}`);
+</script>
+</body>
+</html>

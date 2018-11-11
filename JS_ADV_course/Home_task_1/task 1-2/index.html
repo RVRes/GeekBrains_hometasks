@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reshetnikov Roman_JS.ADV_01</title>
+</head>
+<body>
+<button id="buttonRemoveMenu">Удалить меню</button>
+<div id="mymenu"></div>
+
+<script src="MenuItem.js"></script>
+<script src="Menu.js"></script>
+<script src="SubMenu.js"></script>
+<script>
+    window.onload = () => {
+        //DOM ready
+
+        let menu1 = document.getElementById('mymenu');
+        let buttonRemove = document.getElementById('buttonRemoveMenu');
+
+        let menu = new Menu('my', 'my', [
+                new MenuItem('/', 'Home'),
+                new MenuItem('/about', 'About'),
+                new MenuItem('/blog', 'Blog'),
+                new SubMenu('me', 'me', [
+                    new MenuItem('/', 'Home1'),
+                    new MenuItem('/about1', 'About1'),
+                    new SubMenu('me', 'me', [
+                        new MenuItem('/', 'Home1'),
+                    ]),
+                    new MenuItem('/blog1', 'Blog1'),
+                ]),
+                new MenuItem('/', 'Menu2'),
+                new SubMenu('me', 'me', [
+                    new MenuItem('/', 'Home2'),
+                ]),
+            ])
+        ;
+
+        menu1.innerHTML = menu.render();
+        buttonRemove.addEventListener('click', event => menu.remove(event));
+    }
+</script>
+</body>
+</html>

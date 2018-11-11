@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .orange{
+            background: orange;
+            color: white;
+        }
+        .strong{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<p id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur dolores ipsa libero modi molestiae
+    natus quam repudiandae. Consequuntur corporis dicta earum eveniet facilis iure non quisquam quod quos
+    temporibus!</p>
+<p class="text1">Amet architecto commodi ipsum itaque iure, laboriosam minus molestiae necessitatibus, quibusdam quidem quod
+    reprehenderit repudiandae. Architecto, atque consequuntur dolorum explicabo fugit incidunt ipsum necessitatibus
+    obcaecati placeat quam qui saepe voluptatibus.</p>
+<p>Accusamus ea ex nisi provident quam sed sit! A, ad, deleniti dolor, ducimus eius exercitationem facere fugit
+    inventore laboriosam molestias nesciunt odio quia quod quos sed similique tenetur vitae voluptatum!</p>
+<p class="text1">Dolor dolorum facilis illum itaque iusto laboriosam magnam ratione reprehenderit sequi voluptatum. Ad asperiores
+    aspernatur at commodi delectus distinctio fugiat harum, impedit laborum mollitia nisi nostrum optio perspiciatis,
+    recusandae vero.</p>
+<p>Aliquid animi aut, consequatur culpa doloremque eius, est explicabo, facere facilis illum laudantium natus nesciunt
+    nihil nisi officiis pariatur quia quibusdam quisquam quo rem reprehenderit sapiente sint! Maxime, nesciunt quod?</p>
+<p class="text1">Adipisci aspernatur consequuntur dolorem est id, illo ipsam laboriosam magni nostrum perferendis quam rem repudiandae
+    similique, totam ullam unde ut! Deleniti dolorem eos fugit itaque possimus repellendus sint tempora. Delectus?</p>
+<p>Accusamus commodi eum illo incidunt ipsa maxime neque nihil nisi? Corporis dolore doloremque doloribus velit! Aliquid
+    beatae, distinctio doloribus enim ipsam iure, magni nihil nobis nostrum repudiandae rerum sapiente temporibus.</p>
+<hr>
+<div class="content">
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad animi architecto autem corporis excepturi, exercitationem facilis incidunt ipsam maxime mollitia nemo nihil obcaecati reiciendis rem repellat sequi tempore tenetur?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores earum exercitationem nobis, odio quasi reprehenderit sapiente sed ut? Alias debitis esse excepturi illum, ipsum perferendis quidem sed similique soluta tempora?</div>
+<button class="open">Open</button>
+<button class="close">Close</button>
+<button class="toggle">Toggle</button>
+<hr>
+<div class="ajaxData"></div>
+<button class="ajaxGet">Get data</button>
+<hr>
+<input type="tel" class="phone">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci atque dignissimos dolorem, ducimus ea eos ex hic laudantium maiores, nesciunt omnis porro quam sit ullam unde ut voluptas. Ab, accusantium assumenda commodi cum deleniti fuga hic inventore ipsa iure, non nulla officia possimus rem sed totam unde veritatis! Ab consectetur et excepturi explicabo facilis id illo iste minus, necessitatibus nulla officia, optio, provident quos repellendus similique sint tempore velit voluptas. Ab distinctio eaque et fuga illo iure, laborum modi officia, perspiciatis repellat, sapiente voluptatem. Architecto autem corporis cum cumque dolor est excepturi facilis, fuga laborum, minima numquam officia officiis omnis optio suscipit voluptas voluptates. Architecto consequatur culpa magnam minus obcaecati quisquam recusandae, veniam voluptatem. Culpa delectus dignissimos dolore excepturi mollitia nemo repellendus, saepe? Ab doloribus excepturi expedita, necessitatibus quae saepe. Accusantium alias aperiam aspernatur atque culpa cumque deleniti dicta distinctio, dolore dolorum expedita explicabo fugit hic illum inventore ipsum laboriosam maxime mollitia nesciunt officia perferendis rem soluta tenetur, totam vitae. Adipisci alias asperiores culpa cumque delectus deleniti exercitationem minima quia, quod soluta tempora tenetur veritatis, voluptates. Commodi consequatur debitis deleniti impedit laborum maxime natus necessitatibus nisi placeat praesentium quas quasi quidem, quisquam quos reiciendis sapiente sequi voluptates! Culpa delectus ex in molestias nihil reiciendis velit. Autem consequatur minima nesciunt nisi quam repudiandae? Accusamus alias asperiores aspernatur corporis, cum dolore doloribus, eius explicabo harum ipsa laudantium nam perspiciatis praesentium quaerat quasi sint sunt temporibus tenetur vel voluptates? Ducimus in nam nihil non officiis sed sit, soluta ullam voluptatibus. Distinctio earum inventore molestiae nam provident rem repudiandae ullam. Aliquid aperiam autem beatae deleniti deserunt dolores ducimus eaque explicabo hic iusto labore magnam officiis, quam, quos repellendus reprehenderit totam! Commodi dicta ea error, est odio sunt tempore voluptatum! Amet dignissimos eius eligendi enim ex expedita fugiat iusto obcaecati quas vitae. Non, nulla voluptatibus.
+<script src="jquery.min.js"></script>
+<script src="jquery.mask.min.js"></script>
+<script>
+    console.log(jQuery, $);
+
+    //window.onload
+
+    //Сокращенный вариант
+    // $(function() {
+    //
+    // });
+    //IIFE
+
+    // (function some(){
+    //     return true;
+    // })();
+
+    // (function($){
+    //     $(function() {
+    //
+    //     })
+    // })(jQuery);
+
+    $(document).ready(function() {
+        $('p').addClass('orange');
+        // $('#text').css('color', 'red');
+        // $('.text1').css({
+        //     color: 'red',
+        //     fontSize: '2em'
+        // });
+        $('p').eq(3).addClass('strong');
+
+        //боллее быстрый вариант
+        $('p:eq(4)').addClass('strong');
+
+        // $('p:last').addClass('strong');
+        // $('p:first').addClass('strong');
+
+        // Перебор элементов
+        $('p').each(function(index, item){
+            console.log(index, item);
+            // item.classList.add('bg') //JS
+            // $(item).addClass('bg') //jQuery
+        });
+
+        //Работа с событиями
+
+        let $block = $('.content');
+        let $btnOpen = $('.open');
+        let $btnClose = $('.close');
+        let $btnToggle = $('.toggle');
+
+        // $btnOpen.click(() => {})
+
+        // $wrapper.on('click', '.some-img', func);
+        $btnOpen.on('click', function () {
+            // $block.show();
+            // $block.slideDown(2000);
+            $block.fadeIn(2000);
+        });
+        $btnClose.on('click', function () {
+            // $block.hide();
+            // $block.slideUp(2000);
+            $block.fadeOut(2000);
+        });
+        $btnToggle.on('click', function () {
+            // $block.toggle();
+            // $block.slideToggle(2000);
+            $block.fadeToggle(2000);
+        });
+
+        //AJAX
+        let $ajaxData = $('.ajaxData');
+        let $ajaxBtn = $('.ajaxGet');
+
+        $ajaxBtn.on('click', function() {
+            $.ajax({
+                url: 'user.json',
+                type: 'GET',
+                // async: false // синхронный
+                dataType: 'json',
+                success: function (data){
+                    for (let user of data){
+                        let $user = $(`<p>${user.name} - <strong>${user.tel}</strong></p>`);
+                        $ajaxData.append($user);
+                    }
+                },
+                error: function(error){
+                    console.log(error);
+                }
+            });
+        });
+
+        //Jquery Mask
+        $('.phone').mask('+7 (000) 000-00-00');
+
+    });
+</script>
+</body>
+</html>

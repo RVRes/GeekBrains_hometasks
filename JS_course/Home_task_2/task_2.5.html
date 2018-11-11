@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_Task_2.5</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    /* Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+     где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+     переданного значения операции (использовать switch) выполнить одну из арифметических операций
+     (использовать функции из задания 4) и вернуть полученное значение.
+     */
+    let a = +prompt('Введите "a", произвольное число: ');
+    let b = +prompt('Введите "b", произвольное число: ');
+    let operationSelector = +prompt('Введите действие: 1.Сложение, 2.Вычитание, 3.Деление, 4.Умножение');
+
+    let result = mathOperation(a, b, operationSelector);
+
+    if (result === false || isNaN(result)) {
+        alert(`Введены неверные данные`);
+    } else {
+        alert(`Результат операции для выбранного действия равен ${result}`);
+    }
+
+    function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+            case 1:
+                return getSum(arg1, arg2);
+            case 2:
+                return getDifference(arg1, arg2);
+            case 3:
+                return getDivision(arg1, arg2);
+            case 4:
+                return getMultiplication(arg1, arg2);
+            default:
+                return false;
+        }
+    }
+
+    function getSum(a, b) {
+        return a + b;
+    }
+
+    function getDifference(a, b) {
+        return a - b;
+    }
+
+    function getMultiplication(a, b) {
+        return a * b;
+    }
+
+    function getDivision(a, b) {
+        return Math.round(a / b * 100) / 100;
+    }
+
+</script>
+</body>
+</html>

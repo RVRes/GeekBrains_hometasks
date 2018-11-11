@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reshetnikov Roman_JS.ADV_01</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+<button id="buttonRemoveMenu">Удалить меню</button>
+<div><br></div>
+<div id="mymenu"></div>
+
+<script src="MenuItem.js"></script>
+<script src="Menu.js"></script>
+<script src="SubMenu.js"></script>
+<script>
+    window.onload = () => {
+        //DOM ready
+
+        let menu1 = document.getElementById('mymenu');
+        let buttonRemove = document.getElementById('buttonRemoveMenu');
+
+        let menu = new Menu('my', 'menu__list', [
+                new SubMenu('/', "subMenu__item", 'Каталог', "menu__link", 'me', 'subMenu__list', [
+                    new MenuItem('/', "menu__item", 'Одежда', "menu__link"),
+                    new MenuItem('/about1', "menu__item", 'Обувь', "menu__link"),
+                    new MenuItem('/about1', "menu__item", 'Для спорта', "menu__link"),
+                ]),
+                new MenuItem('/', "menu__item", 'Промоакции', "menu__link"),
+                new MenuItem('/about', "menu__item", 'Лучшая цена', "menu__link"),
+                new MenuItem('/blog', "menu__item", 'Специальные предложения', "menu__link"),
+                new SubMenu('/', "subMenu__item", 'Личный кабинет', "menu__link", 'me', 'subMenu__list', [
+                    new MenuItem('/', "menu__item", 'Вход', "menu__link"),
+                    new MenuItem('/about1', "menu__item", 'Восстановить пароль', "menu__link"),
+                ])
+            ])
+        ;
+
+        menu1.innerHTML = menu.render();
+        buttonRemove.addEventListener('click', event => menu.remove(event));
+    }
+</script>
+</body>
+</html>

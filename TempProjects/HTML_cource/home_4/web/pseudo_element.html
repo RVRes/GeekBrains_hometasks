@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo Elements</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        div{
+            margin: 2em 0;
+            height: 5em;
+            width: 100%;
+            background-color: pink;
+            border-width: 2px 0;
+            border-style: solid;
+            position: relative;
+        }
+
+        div.pseudo::before{
+            content:'';
+            width: inherit;
+            top: -13px;
+            border: solid 3px;
+            position: absolute;
+        }
+        div.pseudo::after{
+            content:'';
+            width: inherit;
+            bottom: -13px;
+            border: solid 3px;
+            position: absolute;
+        }
+
+        li{
+            height: 2em;
+            cursor: pointer;
+        }
+        li:hover::after{
+            content:'NEW!';
+            padding-left: 1em;
+            color: red;
+        }
+        p {
+            margin: 2em;
+        }
+        p::first-line {
+            font-style: italic;
+        }
+        p::first-letter{
+            font-size: 2em;
+            color: red;
+        }
+        li:first-child{
+            font-size: 3em;
+        }
+        li:nth-child(2n){
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="pseudo">Текст</div>
+<ul>
+    <li>Пункт</li>
+    <li>Пункт</li>
+    <li>Пункт</li>
+    <li>Пункт</li>
+    <li>Пункт</li>
+</ul>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio eligendi laborum soluta! Blanditiis dolores ipsa ipsum iste nobis placeat quaerat quidem ut? Aliquam animi at, cum dolore dolores dolorum error esse et eveniet excepturi, expedita facere id illum ipsum necessitatibus nisi, quas repellat sapiente sed tempore totam voluptatibus voluptatum. Accusamus aliquid assumenda at autem beatae consequatur cum deserunt dolorum eius esse et eveniet explicabo facilis fugiat hic illo incidunt iure laboriosam minus, natus officia, perspiciatis placeat provident quasi, qui quia quod ratione reiciendis rem repellendus sed totam ut vel? Alias at consequuntur debitis eos facere ipsam itaque necessitatibus praesentium tenetur.
+</p>
+
+
+</body>
+</html>

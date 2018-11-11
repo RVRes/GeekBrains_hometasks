@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_Task_4.2</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    /*Урок 4, задание 2:
+
+    Для игры, реализованной на уроке (бродилка), добавить возможность ходить по диагонали цифрами 1, 3, 7, 9.
+    Также необходимо сделать так, чтобы пользователь не мог совершить шаг в стенку, т.е. при направлении
+    в стенку игрок оставался на том же месте где стоял.
+    */
+
+    /*
+    1. В детстве писал что-то похожее на zx spectrum. Постоянно ругал себя, когда объединял рендринг сцены
+    и ее построение, тк в итоге получалась куча заплаток и костылей. Здесь разделю. Будет отдельный
+    объект со сценой и с методами обновления и отрисовки.
+
+    2. Дальше, может я ошибаюсь, поправьте, но проверку валидности хода - вот совсем не хочу выносить
+    в отдельный метод, да еще в другом объекте, как предложено в hints. Это все равно, что проверку числа
+    из 1го задания вынести в другой объект. Зачем? Буду делать метод с проверкой внутри метода движения.
+    ps. в ходе разработки понял, что player ничего не знает от размерах доски - вопрос снят.
+
+    3. Еще, подскажите, пожалуйста, такую штуку. Я понимаю, что метод run - контроллер и он ссылается на другие
+    объекты и их методы. Но почему, например, метод render - спокойно лезет в свойство другого объекта
+    this.settings.rowsCount - и что-то там смотрит. Насколько это считается правильным? Будет ли правильней
+    в параметрах передавать ссылки на используемые методы для лучшей изоляции? (ведь код может писать много
+    человек) - это писал глядя на код с урока. Здесь этот стиль сохраню, но если скажете, что нужно изолировать,
+    в следующих работах буду это учитывать. (ps. а вот в player.init - мы честно передаем параметры и не лезем
+    самостоятельно в settings)
+
+    4. Где правильней писать код скрипта - над объектами или под? Есть какие-нибудь правила расположения объектов
+    и других блоков друг относительно друга7
+    */
+
+
+    /**
+     * Объект с настройками игры.
+     * @property {int} rowsCount Количество строк в карте.
+     * @property {int} colsCount Количество колонок в карте.
+     * @property {int} startPositionX Начальная позиция игрока по X координате.
+     * @property {int} startPositionY Начальная позиция игрока по Y координате.
+     */
+    const settings = {
+        rowsCount: 10,
+        colsCount: 10,
+        startPositionX: 0,
+        startPositionY: 0,
+    };
+
+    /**
+     * Объект игрока, здесь будут все методы и свойства связанные с ним.
+     * @property {int} x Позиция по X-координате.
+     * @property {int} y Позиция по Y-координате.
+     * @property {char} y символ отображения игрока
+     */
+    const player = {
+        x: null,
+        y: null,
+        symbol: '0',
+
+        /**
+         * Инициализация игрока и его метоположения.
+         */
+        init(startX, startY) {
+            this.x = startX;
+            this.y = startY;
+        },
+
+        /**
+         * Предлагает вариант движения по выбранному направлению.
+         * @param {int} direction Направление, в котором будет движение.
+         * return {array] [x,y] возвращает предполагаемые координаты движения игрока
+         */
+        tryMove(direction) {
+            let x = this.x;
+            let y = this.y;
+
+            switch (direction) {
+                case 1:
+                    y++;
+                    x--;
+                    break;
+                case 2:
+                    y++;
+                    break;
+                case 3:
+                    y++;
+                    x++;
+                    break;
+                case 4:
+                    x--;
+                    break;
+                case 6:
+                    x++;
+                    break;
+                case 7:
+                    x--;
+                    y--;
+                    break;
+                case 8:
+                    y--;
+                    break;
+                case 9:
+                    x++;
+                    y--;
+            }
+            return [x, y];
+        },
+
+        /**
+         * Проверяет, допустимо ли движение игрока
+         * @param xyCoords {array] [x,y] получает предполагаемые координаты движения игрока
+         */
+        move(xyCoords) {
+            this.x = xyCoords[0];
+            this.y = xyCoords[1];
+        }
+    };
+
+    /**
+     * Объект игрового поля, здесь будут все методы и свойства связанные с ним.
+     * @property {array} field Двумерный массив с игровым полем
+     * @property {char} background символ заливки игрового поля
+     * @property {int} focusX текущее положение курсора по горизонтали
+     * @property {int} focusY текущее положение курсора по вертикали
+     */
+    const board = {
+            field: [],
+            background: 'x',
+            focusX: null,
+            focusY: null,
+
+
+            /**
+             * Инициализируем доску с нужным количеством столбцов и строк.
+             * @param rows (integer) - количество столбцов
+             * @param cols (integer) - количество строк
+             */
+            init: function (rows, cols) {
+                this.field = [];
+                for (let col = 0; col < cols; col++) {
+                    this.field [col] = [];
+                    for (let row = 0; row < rows; row++) {
+                        this.field [col].push(this.background);
+                    }
+                }
+            }
+        }
+    ;
+
+    /**
+     * Объект игры, здесь будут все методы и свойства связанные с самой игрой в общем.
+     * @property {settings} settings Настройки игры.
+     * @property {player} player Игрок, участвующий в игре.
+     * @property {board} игровое поле.
+     */
+    const game = {
+        settings,
+        player,
+        board,
+
+        /**
+         * Запускает игру.
+         */
+        run() {
+            this.player.init(this.settings.startPositionX, this.settings.startPositionY);
+            this.board.init(this.settings.rowsCount, this.settings.colsCount);
+            //         console.log(this.board.field[1].join(' '));
+            //         return;
+
+            // Бесконечный цикл
+            while (true) {
+                if (this.boardUpdate()) {
+                    this.boardRender();
+                }
+
+                // Получаем направление от игрока.
+                const direction = this.getDirection();
+
+                // Если игрок сказал что хочет выйти (набрал -1), значит выходим.
+                if (direction === -1) {
+                    alert('До свидания.');
+                    return;
+                }
+
+                // Двигаем игрока.
+                let moveCoords = this.player.tryMove(direction);
+                if (this.moveIsValid(moveCoords)) {
+                    this.player.move(moveCoords);
+                }
+            }
+        },
+
+        /**
+         * Проверяет, допустимо ли движение игрока
+         * @param xyCoords {array] [x,y] получает предполагаемые координаты движения игрока
+         * @returns {boolean} Возвращает true, если движение допустимо и false, если нет.
+         */
+        moveIsValid(xyCoords) {
+            return xyCoords[0] >= 0 && xyCoords[0] < this.settings.rowsCount &&
+                xyCoords[1] >= 0 && xyCoords[1] < this.settings.colsCount;
+        },
+
+        /**
+         * Обновляет массив с игровым полем.
+         * @returns {boolean} Возвращает true, если обновление состоялось и false, если нет.
+         */
+        boardUpdate() {
+            const b = this.board;
+            const p = this.player;
+            if ((b.focusX === p.x) && (b.focusY === p.y)) {
+                return false;
+            }
+            if (b.focusX != null || b.focusY != null) {
+                b.field [b.focusY] [b.focusX] = b.background;
+            }
+            b.focusX = p.x;
+            b.focusY = p.y;
+            b.field [b.focusY] [b.focusX] = p.symbol;
+            return true;
+        },
+
+        /**
+         * Выводит игровое поле в Console.log
+         */
+        boardRender() {
+            const f = this.board.field;
+            let output = '';
+            for (let key in f) {
+                output += (f[key].join(' ')) + '\n';
+            }
+            console.clear();
+            console.log(output);
+        },
+
+        /**
+         * Получает и отдает направление от пользователя.
+         * @returns {int} Возвращаем направление, введенное пользователем.
+         */
+        getDirection() {
+            // Доступные значения ввода.
+            const availableDirections = [-1, 1, 2, 3, 4, 6, 7, 8, 9];
+
+            while (true) {
+                // Получаем от пользователя направление.
+                const direction = parseInt(prompt('Введите число, куда вы хотите переместиться, -1 для выхода.'));
+
+                // Если направление не одно из доступных, то сообщаем что надо ввести корректные данные
+                // и начинаем новую итерацию.
+                if (!availableDirections.includes(direction)) {
+                    alert(`Для перемещения необходимо ввести одно из чисел: ${availableDirections.join(', ')}.`);
+                    continue;
+                }
+
+                // Если пользователь ввел корректное значение - отдаем его.
+                return direction;
+            }
+        },
+    };
+
+    // Запускаем игру.
+    game.run();
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "Xolonium";
+    src: url("../fonts/Xolonium.ttf");
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #9c9895;
+    font-family: Arial, serif;
+}
+
+header h1 {
+    /*color: #ffffff;*/
+    color: #9c7e35;
+    padding-bottom: 40px;
+    padding-left: 120px;
+    background: url("../images/gislogo.png") no-repeat;
+    background-size: 110px;
+    background-position: 0px 11px;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header a, .contactslink, .productlink {
+    font-size: 16px;
+    /*color: #2A2A7B;*/
+    color: #9c7e35;
+    text-decoration: none;
+    font-family: Xolonium, Helios, serif;
+}
+
+header a:hover {
+    color: #ffcf57;
+}
+
+.productHname {
+    color: #ffffff;
+    font-family: Xolonium, Helios, serif;
+}
+
+.productHdescription, .contactsH, .productsHcat  {
+    font-size: 18px;
+    color: #9c7e35;
+    background-color: #232020;
+    font-weight: 400;
+}
+
+.productdescription, .optionaltable {
+    font-size: 14px;
+    color: #707070;
+    font-style: italic;
+    line-height: 16px;
+}
+
+.optionaltable thead {
+    color: #9c7e35;
+    font-family: Xolonium, Helios, serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+.productoptions {
+    font-size: 16px;
+    color: #ffffff;
+    font-style: oblique;
+    list-style-type: disc;
+}
+
+.productsMissionDesc::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.productsmallimage {
+    color: #9c7e35;
+    border: thick solid;
+}
+
+.productsmallimage:hover {
+    color: transparent;
+    border: thick solid;
+}
+
+.contactsfeedback input, .contactsfeedback textarea {
+    font-size: 14px;
+    color: #9c7e35;
+    width: 500px;
+    height: 1.5rem;
+    margin-bottom: .2rem;
+    text-transform: capitalize;
+}
+
+.contactsfeedback textarea {
+    height: 200px;
+}
+
+.contactslink, .productlink{
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.editmail {
+    border:1px solid #9c7e35;
+    color: #707070;
+}
+
+
+.editmail:focus {
+    background-color: #ffcf57;
+    color: #ff5b05;
+}
+

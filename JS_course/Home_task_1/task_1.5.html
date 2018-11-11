@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_Task_1</title>
+</head>
+<body>
+<script>
+    /* дело в том, что переводить сразу в число, как предложенно в шпаргалке, нельзя, тк. отбросятся нули в начале и
+     билет 001010 (опять же из шпаргалки) счастливым не станет. Буду делать чуть сложнее, но проверки на ввод данных
+     ставить не буду, чтобы не загромождать.
+     */
+    "use strict";
+    let ticketNumber = prompt("Введите номер билета (6 цифр): ");
+    let ticketLeftPart = ticketNumber.substr(0, 3);
+    let ticketRightPart = ticketNumber.substr(3, 3);
+    if (calcStringLetters(ticketLeftPart) === calcStringLetters(ticketRightPart)) {
+        alert("Ура!! Ваш билет счастливый!");
+    } else {
+        alert("Билет самый обычный. Повезет в другой раз!");
+    }
+
+    function calcStringLetters(text) {
+        "use strict";
+        let result = 0;
+        for (let i = 0; i < text.length; i++) {
+            result += +text.substr(i, 1)
+        }
+        return result;
+    }
+</script>
+</body>
+</html>

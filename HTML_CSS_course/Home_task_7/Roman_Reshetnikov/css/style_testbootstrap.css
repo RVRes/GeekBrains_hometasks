@@ -1,0 +1,586 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1.5em;
+}
+
+html {
+    overflow-x: hidden !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+h4, h5, h6 {
+    font-weight: 700;
+    color: #262626;
+}
+
+h2 {
+    font-size: 60px;
+}
+
+h3 {
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 60px;
+}
+
+h4 {
+    line-height: 25px;
+    font-size: 18px;
+}
+
+h5 {
+    line-height: 25px;
+    font-weight: 600;
+}
+
+p {
+    line-height: 25px;
+    font-weight: 400;
+    color: #6a6a6a;
+}
+
+.layout {
+    /*height: 99vh;*/
+    min-width: 270px;
+}
+
+.main-nav {
+    width: auto;
+}
+
+.divider {
+    display: block;
+    margin: 20px auto;
+    content: "";
+    width: 70px;
+    height: 5px;
+    background: #EE3B24;
+}
+
+.navbar-brand img {
+    width: 180px;
+    padding: 10px 0 0 0;
+
+}
+
+.navbar-nav {
+    float: none;
+    text-align: center;
+
+}
+
+ul.navbar-nav a {
+    color: #3a3a3a;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 25px 0 25px 15px;
+    line-height: 40px;
+    display: inline-block;
+    text-transform: uppercase;
+
+}
+
+.nav > li > a:focus {
+    background: transparent !important;
+}
+
+.navbar-nav > li > #service-menu.dropdown-menu {
+    margin-top: 0 !important;
+    z-index: 80;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: transparent;
+}
+
+.nav > li > a:hover {
+    background: transparent;
+    cursor: pointer;
+}
+
+.navbar-toggle {
+    background: #ccc;
+    color: black;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.navbar-toggle .icon-bar {
+    background: #000;
+}
+
+.navbar-nav .dropdown-menu {
+    left: 0;
+    right: auto;
+}
+
+.dropdown-menu * {
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+}
+
+.navbar-nav .dropdown-menu {
+    background: #555;
+    border: 0;
+    box-shadow: none;
+    min-width: 240px;
+    display: block;
+    opacity: 0;
+    z-index: 1;
+    visibility: hidden;
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+    -ms-transform: scale(.8);
+    -o-transform: scale(.8);
+    transform: scale(.8);
+    -webkit-transition: visibility 500ms, opacity 500ms, -webkit-transform 500ms cubic-bezier(.43, .26, .11, .99);
+    -moz-transition: visibility 500ms, opacity 500ms, -moz-transform 500ms cubic-bezier(.43, .26, .11, .99);
+    -o-transition: visibility 500ms, opacity 500ms, -o-transform 500ms cubic-bezier(.43, .26, .11, .99);
+    -ms-transition: visibility 500ms, opacity 500ms, -ms-transform 500ms cubic-bezier(.43, .26, .11, .99);
+    transition: visibility 500ms, opacity 500ms, transform 500ms cubic-bezier(.43, .26, .11, .99);
+}
+
+.navbar-nav .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+.navbar-nav .dropdown-backdrop {
+    visibility: hidden;
+}
+
+.navbar-nav .dropdown-menu li {
+    padding: 5px 20px 0;
+}
+
+.navbar-nav .dropdown-menu li:first-child {
+    border-radius: 2px 2px 0 0;
+}
+
+.dropdown-menu li:last-child {
+    border-radius: 0 0 2px 2px;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    margin-top: 15px !important;
+}
+
+.dropdown-menu > li > a {
+    font-size: 14px;
+    padding: 5px 0;
+    color: #fff;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus,
+.dropdown-menu > li.active > a {
+    background: none !important;
+}
+
+/* Carousel Slider
+============================================== */
+#slider_part {
+    /*height: 800px;*/
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-caption {
+    top: 30%;
+    margin-top: -50px;
+    text-shadow: none !important;
+    left: 9%;
+    right: 10%;
+    -webkit-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+    text-align: center;
+}
+
+.carousel-caption h3 {
+    text-shadow: none;
+    font-size: 40px;
+    line-height: 56px;
+    font-weight: 300;
+    margin: 20px 0px;
+    transition-delay: .3s;
+    -webkit-transition-delay: .3s;
+    -o-transition-delay: .3s;
+    /*text-transform: capitalize !important;*/
+}
+
+.carousel-caption p {
+    font-size: 30px;
+    line-height: 46px;
+    font-weight: 500;
+    color: #fff;
+    transition-delay: .3s;
+    -moz-transition-delay: .3s;
+    -o-transition-delay: .3s;
+    margin: 20px 0px;
+    text-transform: uppercase;
+}
+
+.carousel-caption img {
+    border: 2px solid #fff;
+    padding: 10px 10px 10px 20px;
+}
+
+.line {
+    width: 100px;
+    height: 5px;
+    color: #222;
+    margin: 0px auto;
+}
+
+.carousel-caption p i {
+    font-size: 7px;
+    margin: 0px 3px;
+    position: relative;
+    top: -3px;
+}
+
+.carousel .item {
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    -ms-transition: opacity .3s;
+    -o-transition: opacity .3s;
+    transition: opacity .3s;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none !important;
+    background-repeat: no-repeat !important;
+}
+
+.carousel-control {
+    width: 4% !important;
+}
+
+.carousel-caption img {
+    height: auto;
+}
+
+.carousel-indicators {
+    /*bottom:100px;*/
+    width: 10%;
+    left: 45%;
+    margin: 0 auto;
+    bottom: 30%;
+}
+
+.carousel-indicators li {
+    width: 20px !important;
+    height: 20px !important;
+    border: 2px solid #FFF !important;
+    margin: 0px !important;
+    border-radius: 50%;
+
+}
+
+.carousel-control.left span {
+    padding: 15px;
+}
+
+.slides-control .carousel-control {
+    position: absolute;
+    width: 240px;
+    top: 35%;
+    z-index: 10;
+}
+
+.carousel-control.left {
+    left: 0px;
+}
+
+.carousel-control.right {
+    right: 15px;
+}
+
+.carousel-control.left {
+    width: 120px;
+    height: 40px;
+}
+
+.carousel-control.right {
+    width: 120px;
+    height: 40px
+}
+
+.overlay-slide {
+    height: 850px;
+    position: relative;
+    width: 100%;
+}
+
+.overlay-slide:after {
+    background: url("../images/slider/overaly.png");
+    position: absolute;
+    content: "";
+    z-index: 3;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.overlay-slide img {
+    width: 100%;
+
+    display: block;
+    overflow: hidden;
+}
+
+/* Service  Area
+============================================================= */
+.main_feature {
+    margin: 40px 0px;
+}
+
+.feature_title {
+    position: relative;
+    padding-bottom: 10px;
+    color: #EE3B24 !important;
+    width: 65%;
+    /*margin: 10px auto;*/
+    font-size: 40px;
+    line-height: 50px;
+    text-transform: uppercase;
+}
+
+.feature_content i {
+    font-size: 60px;
+    line-height: 60px;
+    z-index: 3;
+    position: relative;
+    -webkit-transition: all .4s ease .1s;
+    -o-transition: all .4s ease .1s;
+    transition: all .4s ease .1s;
+    display: block;
+}
+
+.feature_content h5 {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 19px;
+    margin: 0px 0px 30px;
+    text-transform: uppercase;
+    padding-top: 34px;
+    -webkit-transition: all 150ms linear 0s;
+    -o-transition: all 150ms linear 0s;
+    transition: all 150ms linear 0s;
+    letter-spacing: -1px;
+}
+
+.feature_content p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #222;
+}
+
+.feature_content a {
+    text-decoration: none;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+.feature_content a:hover {
+    text-decoration: none;
+}
+
+/*Blog
+===============================================*/
+
+.blog-timeline {
+    position: relative;
+    margin-top: 40px;
+}
+
+.single_blog {
+    margin: 0px 15px;
+}
+
+.post_img img {
+    float: left;
+    width: 100%;
+    height: 250px;
+}
+
+.post_img {
+    position: relative;
+}
+
+.post-date {
+    position: absolute;
+    top: 0px;
+    width: 70px;
+    height: 70px;
+    left: 0px;
+}
+
+.post_img {
+    text-decoration: none;
+    color: #fff;
+}
+
+.post-date span {
+    display: block;
+    padding: 5px 0px;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 3px 0px;
+}
+
+.post-date {
+    font-size: 20px;
+    text-align: center;
+}
+
+.single_blog ul li {
+    color: #999;
+    font-size: 12px;
+}
+
+.single_blog ul li i {
+
+}
+
+.single_blog h4 {
+    text-transform: uppercase;
+    padding-top: 15px;
+    clear: both;
+}
+
+.single_blog h4:hover {
+    color: #EE3B24;
+}
+
+.single_blog p {
+    margin: 8px 0px;
+    font-size: 13px;
+    text-align: justify;
+}
+
+/*techsupport
+===============================================*/
+
+.techsupport div {
+    text-align: center;
+}
+
+.techsupport img {
+    width: 300px;
+    height: 300px;
+    border: 5px solid rgba(0, 0, 0, 0.09);
+}
+
+.techsupport h3.name {
+    font-size: 26px;
+    font-weight: 700;
+    color: red;
+}
+
+.techsupport h3.name span {
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    color: #555;
+    text-transform: capitalize;
+}
+
+/* Footer Area
+==========================================*/
+.footer .layout__footer {
+    overflow: hidden;
+    padding: 20px;
+    border-bottom: 1px solid #0F0F0F;
+    background: none repeat scroll 0% 0% #333;
+    color: #AAA;
+}
+
+.footer h3 {
+    color: #C5C5C2 !important;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    margin: 15px 0px 35px 0px;
+}
+
+/*===== Media override===*/
+
+@media (max-width: 1200px) {
+    ul.navbar-nav a {
+        font-stretch: semi-condensed;
+    }
+
+    .overlay-slide {
+        height: 100%;
+    }
+
+    .carousel-caption h3 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .carousel-caption p {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .carousel-indicators {
+        bottom: 10%;
+    }
+}
+
+@media (max-width: 1000px) {
+    ul.navbar-nav a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 767px) {
+    ul.navbar-nav a {
+        font-stretch: normal;
+        font-size: 14px;
+    }
+
+    ul.navbar-nav li {
+        background-color: #eaeaea;
+        border: thin solid;
+        border-color: white;
+    }
+
+    .overlay-slide {
+        height: 100%;
+    }
+
+    .carousel-caption h3 {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .carousel-caption p {
+        font-size: 15px;
+        line-height: 20px;
+        margin: 0;
+    }
+
+    .carousel-indicators {
+        visibility: hidden;
+    }
+
+    .feature_title {
+        width: 60%;
+        font-size: 24px;
+    }
+}

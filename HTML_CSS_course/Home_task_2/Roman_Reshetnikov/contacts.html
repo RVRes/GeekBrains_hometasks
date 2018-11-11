@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gifts in Stock</title>
+    <link rel="icon" href="images/gift.png">
+</head>
+
+<!--TODO(Решетников) На странице «Контакты»
+Меню сайта
+Горизонтальная черта
+Заголовок «Напишите нам»
+Поля для заполнения
+Имя
+Email
+Тема
+Текстовое поле
+* Произвольные поля, которые на ваше усмотрение нужны на вашем сайте.
+Заголовок «Адрес»
+Контактный номер телефона интернет-магазина
+Адрес
+Email
+* Любая информация о магазине
+* На страницу контактов добавьте реальную карту Yandex или Google.-->
+
+
+<body>
+    <header>
+        <h1>Gifts in Stock - корпоративные подарки из Европы</h1>
+        <p>Мы убеждены, что хороший подарок приносит радость в жизнь многих людей.</p>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="products.html">Каталог</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <hr>
+    </header>
+    <main>
+        <h2>Напишите нам</h2>
+        <form action="action.php" method="post">
+            <fieldset>
+                <label>
+                    Ваше имя:
+                    <input type="text" name="username" placeholder="Введите имя"><br>
+                </label>
+                <label>
+                    Ваш E-Mail:
+                    <input type="email" name="email" placeholder="Введите Email"><br>
+                </label>
+                <label>
+                    Тема:
+                    <input type="text" name="subject" placeholder="Тема письма"><br>
+                </label>
+                <textarea name="message" cols="60" rows="10" placeholder="Данные заказа"></textarea><br>
+                <input type="submit" value="Отправить">
+            </fieldset>
+        </form>
+        <h2>Адрес</h2>
+        <p>Позвоните нам: +7 (495) 969-24-50</p>
+        <p>E-mail: <a href="mailto:sales@oasiscatalog.com">sales@oasiscatalog.com</a></p>
+        <p>Адрес: 123007, Москва, ул. 4-я Магистральная, д. 5, стр. 4</p>
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A00e86786f224da0265c408d424f3fbf85841b0eb35237df07232b6e4f46e9146&amp;width=573&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>
+    </main>
+    <footer>
+        <hr>
+        <small>&copy; Все права защищены.</small>
+    </footer>
+    <!--Версия 1.0.0 Валидация 2018.03.21-->
+</body>
+</html>

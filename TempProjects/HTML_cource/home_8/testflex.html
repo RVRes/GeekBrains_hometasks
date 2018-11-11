@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TestFlex</title>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            border: thin solid;
+            margin: 0;
+            padding: 0;
+            justify-content: space-around;
+            align-content: center;
+            align-items: flex-start;
+        }
+
+        .layout {
+            display: flex;
+            flex-flow: row wrap;
+            height: 99vh;
+        }
+
+        .block_2 {
+            /*flex: 5 5 30%;*/
+        }
+
+        .block_4 {
+            flex: 0 0 30%;
+        }
+    </style>
+</head>
+<body>
+<div class="layout">
+    <header>header</header>
+    <div class="block_1">block 1</div>
+    <div class="block_2">block 2</div>
+    <div class="block_3">block 3</div>
+    <div class="block_4">block 4</div>
+    <footer>footer</footer>
+</div>
+</body>
+</html>

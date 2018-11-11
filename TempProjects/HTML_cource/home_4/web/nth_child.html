@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ten Happy Divs</title>
+    <style>
+        div{
+            background-color: grey; 
+            /*плавная замена свойств*/
+            transition: 1s;
+        }
+        .circle{
+            margin: 1em auto;
+            width: 4em;
+            height: 4em;
+            background-color: red; 
+        }
+        /*При наведении на первый блок заставим вложенный circle скруглиться*/
+        .parent:hover .circle{
+            border-radius: 50%;
+        }
+        
+        /*Выравниваем item по ширине родительского блока с помощью float и margin*/
+        .main{
+            /*Слой имеет фиксированную ширину и выравнивается по середине*/
+            width: 960px;
+            margin: 1em auto 0 auto;
+        }
+        .container{
+            /*Контейнер занимает всю ширину родительского элемента*/
+            width: 100%;
+            float: left;
+            background-color: bisque;
+        }
+        .item{
+            margin-bottom: 1em;
+            width: 30%;
+            height: 16em;
+            float: left;
+            margin-left: 2.5%;
+        }
+        /*Красим каждый третий блок, а так же убираем правый отступ*/
+        .item:nth-child(3n){
+            /*если для каждого третьего элемента правый отствуп не убрать,
+            выравнивания не получится. Смысл такой, что сумма ширин элементов
+            и правых отступов, в ряд, должна равняться 100%. 30+5+30+5+30+5 = 105.
+            Последний отступ у каждого третьего элемента лишний*/
+            margin-right: 2.5%;
+            background-color: blue;
+        }
+
+        
+        
+        /*Заставим смайл меняться при наведении на последний div*/
+        img{
+            width:50%;
+            height:inherit;
+            margin: 0 auto;
+        }
+        .image{
+            text-align: center;
+        }
+        .image img:nth-child(2){
+            display:none;
+        }
+        .image:hover img:nth-child(2){
+            display:block;
+        }
+        .image:hover img:nth-child(1){
+             display:none;
+         }
+        
+    </style>
+</head>
+<body>
+<div class="main">
+<div class="container">
+    <div class="item parent">
+        <div class="circle"></div>
+    </div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item image">
+        <img src="img/confused.svg" alt="confused">
+        <img src="img/happy.svg" alt="happy">
+    </div>
+</div>
+</div>
+
+</body>
+</html>

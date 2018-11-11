@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reshetnikov Roman_JS.ADV_02</title>
+</head>
+<body>
+<div id="data"></div>
+<button id="getS">Get Success</button>
+<button id="getE">Get Error</button>
+<script>
+    function getResult(filename) {
+        let block = document.getElementById('data');
+        fetch(filename)
+            .then(result => {
+                console.log(result);
+                return result.json();
+            })
+            .then(data => {
+                console.log(data);
+                block.innerHTML = `Result: ${data.result}`;
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+    window.onload = () => {
+        document.getElementById('getS').addEventListener('click', () => getResult('answersuccess.json'));
+        document.getElementById('getE').addEventListener('click', () => getResult('answererror.json'));
+    }
+
+</script>
+</body>
+</html>

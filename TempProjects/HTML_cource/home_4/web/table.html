@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <style>
+        table{
+            border-spacing: 1em;
+            border-collapse: collapse;
+        }
+        td,
+        th {
+            border: thin solid;
+            padding: 1em;
+        }
+        th {
+            border-color: red;
+        }
+        thead{
+            font-weight: bold;
+            color: red;
+        }
+        tfoot{
+            font-weight: bold;
+            color: blue;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <caption>Название таблицы</caption>
+    <thead>
+        <tr>
+            <th>Заголовок 1</th>
+            <th>Заголовок 2</th>
+            <th>Заголовок 3</th>
+            <th>Заголовок 4</th>
+        </tr>
+    </thead>
+    <tbody>  
+        <tr>
+            <td rowspan="2">1</td>
+            <td colspan="3">2</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Итог 1</td>
+            <td>Итог 2</td>
+            <td>Итог 3</td>
+            <td>Итог 4</td>
+        </tr>
+    </tfoot>
+</table>    
+
+
+</body>
+</html>

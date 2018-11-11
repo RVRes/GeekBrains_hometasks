@@ -1,0 +1,72 @@
+@font-face {
+    font-family: "dk paradise";
+    src: url("../fonts/dk_paradise.ttf");
+}
+
+
+body {
+    color: blue;
+
+    /*background-image: url("http://fonday.ru/images/tmp/12/6/original/12667YinokqvgJmxOPBSCjDdNhyZ.jpg");*/
+    /*background-size: 100%;*/
+    /*background-attachment: fixed;*/
+
+    background: url("http://fonday.ru/images/tmp/12/6/original/12667YinokqvgJmxOPBSCjDdNhyZ.jpg") center no-repeat fixed;
+
+}
+
+.my_yellow_text {
+    color: yellow;
+}
+
+#main {
+    font-size: 16px;
+    background-color: rgba(255,0,0, 0.5);
+    width: 300px;
+    height: 300px;
+    font-family: "dk paradise", Arial, serif;
+
+
+}
+
+
+ul {
+    list-style-type: armenian;
+}
+
+p b {
+    color: white;
+}
+
+div>i {
+    text-decoration: underline;
+}
+
+h1 {
+    color: yellow;
+}
+
+
+h2.my_h2#h2id,  /*111 баллов*/
+h3,             /*1 балл*/
+div p i{        /*1 балл*/
+    color: red;
+}
+
+/*10 баллов*/
+.my_h2 {
+    color: red;
+}
+
+/*11 баллов*/
+h2.my_h2 {
+    color: red;
+}
+
+/*1 балл*/
+h2 {
+    color: green;
+}
+
+
+

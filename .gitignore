@@ -1,0 +1,10 @@
+.idea
+*.rar
+*.zip
+__MACOSX
+._.DS_Store
+node_modules
+bower_components
+build
+dist
+distr

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_Task_4.3</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    /*Урок 4, задание 3:
+
+    На базе игры (приняв за пример), созданной на уроке, реализовать игру «Кто хочет стать миллионером?».
+    Т.е. у вас должен быть главный объект содержащий всю логику игры, который будет иметь методы,
+    например метод run, возможно метод init и т.д.
+    В игре должны быть заранее подготовлены список вопросов и ответов (как минимум 5 вопросов).
+    Игра должна приветствовать пользователя, после чего задавать вопросы пользователю
+    и предлагать варианты ответов в виде теста, например:
+
+    Сколько букв в слове "привет":
+    a. Пять.
+    b. Шесть.
+    c. Семь.
+    d. Куда я попал?
+
+    Проверять правильный вариант выбрал пользователь или нет, необходимо вести счет.
+    По окончании игры, когда было задано 5 вопросов, вы должны сообщить пользователю его счет
+    и предложить сыграть снова.
+    Также должна быть возможность выхода из игры заранее, если пользователю надоело играть.
+
+    */
+
+    /* Здесь воспользуюсь Вашим шаблоном, он мне кажется логичным и понятным.
+    Дополню лишь методом генерации индекса вопроса с проверкой на повтор.
+    */
+
+    /**
+     * @type {object[]} Массив с объектами вопросов.
+     */
+    const questions = [
+        {
+            text: 'Как правильно закончить пословицу: «Не откладывай на завтра то, что можно…»?',
+            variants: {
+                'a': 'сделать сегодня',
+                'b': 'сделать послезавтра',
+                'c': 'сделать через месяц',
+                'd': 'никогда не делать',
+            },
+            correctAnswerIndex: 'a',
+        },
+        {
+            text: 'Что не бывает морским?',
+            variants: {
+                'a': 'огурец',
+                'b': 'гребешок',
+                'c': 'рельс',
+                'd': 'узел',
+            },
+            correctAnswerIndex: 'c',
+        },
+        {
+            text: 'Где в Древней Греции можно было увидеть надпись: «Здесь живут мертвые и говорят немые»?',
+            variants: {
+                'a': 'на кладбищах',
+                'b': 'в больницах',
+                'c': 'в библиотеках',
+                'd': 'в тюрьмах',
+            },
+            correctAnswerIndex: 'c',
+        },
+        {
+            text: 'В какой из этих городов Новый год приходит раньше?',
+            variants: {
+                'a': 'Пермь',
+                'b': 'Красноярск',
+                'c': 'Омск',
+                'd': 'Новосибирск',
+            },
+            correctAnswerIndex: 'b',
+        },
+        {
+            text: 'Как называли чудовище с телом льва, головой человека и хвостом скорпиона?',
+            variants: {
+                'a': 'Скилла',
+                'b': 'Кобольд',
+                'c': 'Вендиго',
+                'd': 'Мантихора',
+            },
+            correctAnswerIndex: 'd',
+        },
+        {
+            text: 'Что измеряют с помощью курвиметра?',
+            variants: {
+                'a': 'длину',
+                'b': 'вес',
+                'c': 'прочность',
+                'd': 'силу тока',
+            },
+            correctAnswerIndex: 'a',
+        },
+        {
+            text: 'Во что, согласно пророчеству ведьмы, должна была превратиться Русалочка в сказке Андерсена?',
+            variants: {
+                'a': 'в морскую звезду',
+                'b': 'в морскую пену',
+                'c': 'в морскую раковину',
+                'd': 'в морскую волну',
+            },
+            correctAnswerIndex: 'b',
+        },
+        {
+            text: 'На каком уроке школьники узнают о вакуолях?',
+            variants: {
+                'a': 'географии',
+                'b': 'алгебры',
+                'c': 'истории',
+                'd': 'биологии',
+            },
+            correctAnswerIndex: 'd',
+        },
+    ];
+
+    /**
+     * @property {questions} questions Массив с объектами вопросов.
+     * @property {int} scoreCount Счетчик правильных ответов.
+     * @property {int} questionCount Счетчик вопросов.
+     * @property {int} questionIndex Индекс текущего вопроса.
+     * @property {array} askedQuestionIndexes Массив заданных вопросов
+     */
+    const game = {
+        questions,
+        scoreCount: null,
+        questionCount: null,
+        questionIndex: null,
+        askedQuestionIndexes: null,
+
+        /**
+         * Запуск игры.
+         */
+        run() {
+            this.init();
+            while (true) {
+                //получаем индекс вопроса
+                this.questionIndex = this.getNewQuestionIndex();
+                if (this.questionIndex === false) {
+                    this.showGameResults();
+                    this.playOnceMore();
+                    return;
+                }
+
+                //увеличиваем счетчик вопросов
+                this.questionCount++;
+
+                //выводим вопрос в консоль
+                console.log(this.getCurrentQuestionString());
+
+                //спрашиваем вариант ответа пользователя
+                let answer;
+                do {
+                    answer = this.getAnswer();
+                    if (this.userWantExit(answer)) {
+                        return alert('До свидания.');
+                    }
+                } while (!this.validateAnswer(answer));
+
+                //проверяем, верно ли ответил пользователь
+                if (this.isAnswerCorrect(answer)) {
+                    console.log(`Верно!`);
+                    this.scoreCount++;
+                } else {
+                    console.log(`Вы ошиблись.`);
+                }
+
+                //проверяем, все ли вопросы мы задали
+                if (this.isGameOver()) {
+                    this.showGameResults();
+                    this.playOnceMore();
+                    return;
+                }
+            }
+        },
+
+        /**
+         * Инициализация игры.
+         */
+        init() {
+            console.clear();
+            this.scoreCount = 0;
+            this.questionCount = 0;
+            this.questionIndex = 0;
+            this.askedQuestionIndexes = [];
+        },
+
+        /**
+         * Получаем номер нового вопроса. Проверяем - задавали или нет.
+         */
+        getNewQuestionIndex() {
+            const qi = this.askedQuestionIndexes;
+            for (let count = 0; count < 1000000; count++) {
+                let index = Math.floor(Math.random() * this.questions.length);
+                if (!qi.includes(index)) {
+                    qi.push(index);
+                    return index;
+                }
+            }
+            // что-то пошло не так, не смог найти номер. пробуем перебором
+            for (let index = 0; index < this.questions.length; index++) {
+                if (!qi.includes(index)) {
+                    qi.push(index);
+                    return index;
+                }
+            }
+            // все номера вопросов использованы - выдаем ошибку
+            console.error(`Ошибка метода: getNewQuestionIndex. Не смог найти свободный индекс вопроса.`);
+            return false;
+        },
+
+        /**
+         * Получаем ответ от пользователя.
+         * @returns {string} Строка ответа пользователя.
+         */
+        getAnswer() {
+            return prompt(`Выберите правильный вариант ответа или -1 для выхода:`);
+        },
+
+        /**
+         * Возвращает строку с текущим вопросом и вариантами ответов.
+         * @returns {string} Строку с текущим вопросом и вариантами ответов.
+         */
+        getCurrentQuestionString() {
+            let q = this.questions[this.questionIndex];
+            let text = `\nВопрос № ${this.questionCount}.\n\n ${q.text}\n\n`;
+            for (const key in q.variants) {
+                text += (`${key} - ${q.variants[key]} \n`);
+            }
+            text += `\n`;
+            return text;
+        },
+
+        /**
+         * Проверяем ответ пользователя на корректность ввода.
+         * @param {string} userAnswer Ответ пользователя.
+         * @returns {boolean} true если пользователь ввел корректные данные, иначе false.
+         */
+        validateAnswer(userAnswer) {
+            return userAnswer in this.questions[this.questionIndex].variants;
+        },
+
+        /**
+         * Проверяет ввел ли пользователь вместо ответа информацию для выхода из игры.
+         * @param {string} userAnswer Ответ пользователя.
+         * @returns {boolean} true, если пользователь хотел выйти, false если нет.
+         */
+        userWantExit(userAnswer) {
+            return userAnswer === "-1";
+        },
+
+        /**
+         * Проверяет является ли ответ, переданный в функцию верным.
+         * @param {string} userAnswer Ответ пользователя.
+         * @returns {boolean} true, если ответ пользователя верный, false если нет.
+         */
+        isAnswerCorrect(userAnswer) {
+            return this.questions[this.questionIndex].correctAnswerIndex === userAnswer;
+        },
+
+        /**
+         * Проверяет закончилась ли игра.
+         * @returns {boolean} true, если были заданы все вопросы, иначе false.
+         */
+        isGameOver() {
+            return this.questionCount === this.questions.length;
+        },
+
+        /**
+         * Показывает статистику игры
+         */
+        showGameResults() {
+            const d = ` ============================ `;
+            let text = `\n${d}\n`;
+            if (this.scoreCount / this.questionCount > 0.7) {
+                text += `Вы молодец! Верных ответов ${this.scoreCount} из ${this.questionCount}!`;
+            } else {
+                text += `Так не годится. Верных ответов ${this.scoreCount} из ${this.questionCount}. ` +
+                    `Оторвитесь от игр и читайе книжки!`;
+            }
+            text += `\n${d}\n`;
+            console.log(text);
+        },
+
+        /**
+         * Спрашивает, хочет ли игрок сыграть еще раз. Если да - запускает игру
+         */
+        playOnceMore() {
+            //сначала просто возвращал значения, но это привело к дублированию кода в run - переделал так.
+            //можно ли как-то отпускать экземпляр предыдущей игры, перед запуском новой для освобождения памяти?
+            // почему я не могу использовать return в тернарном операторе?
+            if (confirm('Сыграем еще разок?')) {
+                game.run();
+            }
+        },
+
+    };
+
+    // Запускаем игру.
+    game.run();
+</script>
+</body>
+</html>

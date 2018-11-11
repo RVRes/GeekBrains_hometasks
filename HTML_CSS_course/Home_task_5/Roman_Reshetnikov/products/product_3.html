@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gifts in Stock</title>
+    <link rel="icon" href="../images/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+</head>
+
+<!--TODO(Решетников) На странице «Товар каталога» (страницы из первого ДЗ)
+4) Страница "Подробное описание товара"
+4.1) Заголовки (Краткое описание товара, Характеристики, Подробное описание товара)
+* Цвет текста черный.
+* Размер шрифта 18px;
+* Насыщенность шрифта 400. (font-weight);
+* установите цвет фона #eaeaea;
+4.2) Для текста краткого описания товар.
+* Цвет текста #707070;
+* Размер шрифта 14px.
+* Начертание шрифта italic. (font-style)
+* Высоту текста 16px (line-height);
+4.3) Для текста подробного описания товара:
+* Цвет текста #484343.
+* Размер шрифта 16px.
+* Насыщенность шрифта 400. (font-weight);
+* Высоту текста 24px (line-height);
+* Расположение текста по левому краю (text-align)
+4.4) Для списка внурти подраздела Характеристики товара
+* задайте списку стили, отличные от всего остального текста.
+* *установите в качестве маркеров произвольные изображения-->
+
+<body>
+<div class="container">
+    <header>
+        <div>
+            <a href="../index.html"><img class="headerLogo" src="../images/GisLogo.png" alt="logo"></a>
+        </div>
+        <div class="headercontent">
+            <div class="headercontentTop">
+                <div class="headercontentMiddle">
+                    <form class="searcher" action="" method="get">
+                        <input name="s" placeholder="Найти свой подарок..." type="search">
+                        <button class="fa fa-search" type="submit"></button>
+                    </form>
+                    <p>+7 (495) 969-24-50</p>
+                </div>
+                <div class="headercontentRight">
+                    <h1>Корпоративные&nbsp;подарки&nbsp;из&nbsp;Европы</h1>
+                    <p>Мы&nbsp;убеждены, что хороший подарок приносит радость в&nbsp;жизнь многих людей.</p>
+                </div>
+            </div>
+            <div class="headercontentBottom">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../pages/products.html">Каталог</a></li>
+                    <li><a href="../pages/contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2 class="productHname">Набор для водки &#171;Орел&#187;</h2>
+
+
+        <div class="cat1stRow">
+            <div>
+                <a href="../images/82676_a.jpg" target="_blank"><img class="productsmallimage"
+                                                                      src="../images/82676_a.jpg" width="650"
+                                                                      alt="изображение товара"
+                                                                      title="Набор для водки &#171;Орел&#187;"></a>
+            </div>
+            <div>
+                <h3 class="productHdescription">Описание товара</h3>
+                <p class="productdescription">Великолепный настольный набор для водки с&nbsp;фигурой орла <br/>
+                    из&nbsp;литьевого мрамора, расположенной на&nbsp;деревянной подставке. <br/>
+                    Набор включает в&nbsp;себя 6 стопок из&nbsp;высококачественного стекла. <br/>
+                    Отличный подарок для партнеров по&nbsp;бизнесу.<br/><br/><br/>
+                </p>
+                <h3 class="productHdescription">Характеристики товара</h3>
+                <table class="productoptions" width="100%" cellpadding="5" border="1">
+                    <tbody>
+                    <th>Цвет:</th>
+                    <td>серебристый, прозрачный</td>
+                    </tr>
+                    <tr>
+                        <th>Материал:</th>
+                        <td>искусственная литьевой мрамор/стекло/дерево</td>
+                    </tr>
+                    <tr>
+                        <th>Размер товара:</th>
+                        <td>340&times;250&times;250&nbsp;мм.</td>
+                    </tr>
+                    <tr>
+                        <th>Вес:</th>
+                        <td>6700&nbsp;г.</td>
+                    </tr>
+                    <tr>
+                        <th>Описание упаковки:</th>
+                        <td>картонная коробка белого цвета</td>
+                    </tr>
+                    <tr>
+                        <th>Количество в упаковке:</th>
+                        <td>1 шт</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <form action="" method="post">
+                    <input class="sendBtn" type="submit" value="Купить">
+                </form>
+
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <small>&copy; Все права защищены.</small>
+    </footer>
+    <!--Версия 1.0.1 Валидация 2018.03.21-->
+</div>
+</body>
+</html>

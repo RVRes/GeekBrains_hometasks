@@ -1,0 +1,323 @@
+@font-face {
+    font-family: "Xolonium";
+    src: url("../fonts/Xolonium.ttf");
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #9c9895;
+    font-family: Arial, serif;
+}
+
+.container {
+    width: 100%;
+    height: 98vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+
+}
+
+.container main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+header, footer {
+    background: url("../images/dotally.png");
+}
+
+header {
+    border-bottom: thin solid;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+header .headerLogo {
+    padding-left: 30px;
+    height: 160px;
+    float: left;
+}
+
+header .headercontentTop {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    float: left;
+}
+
+header .headercontent .headercontentMiddle {
+    /*padding-left: 200px;*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+header .headercontent .headercontentRight {
+    display: flex;
+    width: 800px;
+    padding-right: 100px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+header .headercontent .headercontentRight p {
+    margin: 7px;
+    font-size: 14px;
+    font-style: italic;
+
+}
+
+footer {
+    height: 2%;
+    border-top: thin solid;
+    text-align: right;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+header h1 {
+    color: #9c7e35;
+    margin: 0;
+}
+
+header ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, .1);
+    padding: 0.8em 200px;
+    margin: 0;
+}
+
+header ul a,
+.sendBtn{
+    font-family: Xolonium, Helios, serif;
+    display: inline;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.6em 20px;
+    margin: 20px 2px;
+    color: #000;
+    text-shadow: -1px 1px #57481f;
+    /*http://www.colorzilla.com/gradient-editor/*/
+    background: #ffcf57;
+    background: -moz-linear-gradient(top, #ffcf57 0%, #edd5a1 37%, #aa8a3a 71%, #aa8a3a 100%);
+    background: -webkit-linear-gradient(top, #ffcf57 0%, #edd5a1 37%, #aa8a3a 71%, #aa8a3a 100%);
+    background: linear-gradient(to bottom, #ffcf57 0%, #edd5a1 37%, #aa8a3a 71%, #aa8a3a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcf57', endColorstr='#aa8a3a', GradientType=0);
+    box-shadow: inset 0 0 0 1px #57481f;
+    border: none;
+    border-radius: 5px;
+}
+
+header ul a:hover{
+    box-shadow: inset 0 0 0 1px #9c7e35, 0 5px 15px #57481f;
+    background: #ffcf57;
+}
+
+header ul a:active{
+    box-shadow: inset 0 0 0 1px #9c7e35, inset 0 5px 20px #57481f;
+}
+
+header .searcher {
+    box-sizing: border-box;
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    background: #ffcf57;
+    border-radius: 5px;
+}
+
+header .searcher input {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #ffcf57;
+    border-radius: 5px;
+    outline: none;
+    background: #fff9c6;
+    color: #716f6f;
+}
+
+header .headercontentMiddle p {
+    margin: 5px;
+}
+
+header .searcher button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #ffcf57;
+    /*http://www.colorzilla.com/gradient-editor/*/
+    background: -moz-linear-gradient(top, #ffcf57 0%, #edd5a1 37%, #aa8a3a 71%, #aa8a3a 100%);
+    background: -webkit-linear-gradient(top, #ffcf57 0%, #edd5a1 37%, #aa8a3a 71%, #aa8a3a 100%);
+    background: linear-gradient(to bottom, #ffcf57 0%, #edd5a1 37%, #aa8a3a 71%, #aa8a3a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcf57', endColorstr='#aa8a3a', GradientType=0);
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+header .searcher button:before {
+    font-size: 25px;
+    color: #F9F0DA;
+}
+
+.contactslink,
+.productlink,
+header .headercontent .headercontentMiddle p {
+    font-size: 16px;
+    /*color: #2A2A7B;*/
+    color: #9c7e35;
+    text-decoration: none;
+    font-family: Xolonium, Helios, serif;
+}
+
+.productHname {
+    color: #ffffff;
+    font-family: Xolonium, Helios, serif;
+    margin-bottom: 50px;
+}
+
+.productsHcat {
+    font-size: 30px;
+    color: #9c7e35;
+    background-color: #232020;
+    font-weight: 400;
+    margin-bottom: 50px;
+    padding: 0 40vw;
+}
+
+.contactsH, .productHdescription{
+    font-size: 30px;
+    color: #9c7e35;
+    background-color: #232020;
+    font-weight: 400;
+    margin-bottom: 50px;
+    /*padding: 0 40vw;*/
+}
+
+.productHdescription{
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.cat1stRow,
+.cat2ndRow{
+    width: 80%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.container .contacts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+.contactsBlock{
+    padding: 20px;
+    color: #707070;
+    border: thin solid;
+    height: 60vh;
+    overflow: hidden;
+
+}
+
+
+.productdescription {
+    font-size: 14px;
+    color: #707070;
+    font-style: italic;
+    line-height: 16px;
+}
+
+.productoptions {
+    font-size: 16px;
+    color: #c2c2c2;
+    font-style: normal;
+    list-style-type: disc;
+}
+
+.productsMissionDesc::first-letter,
+.mainpageMisson::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.productsmallimage:hover  {
+    color: #ffcf57;
+    border: thick solid;
+}
+
+.productsmallimage{
+    color: transparent;
+    border: thick solid;
+}
+
+.contactsfeedback input, .contactsfeedback textarea {
+    font-size: 14px;
+    width: 500px;
+    height: 1.5rem;
+    margin-bottom: .6em;
+    text-transform: capitalize;
+    border: 1px solid #9c7e35;
+    color: #707070;
+}
+
+.contactsfeedback .sendBtn {
+    height: 40px;
+    margin: 0;
+    color: black;
+}
+
+.contactsfeedback .sendBtn:hover,
+.contactsfeedback .sendBtn:active{
+    background: #ffcf57;
+}
+
+.contactsfeedback{
+    border: none;
+}
+
+.contactsfeedback textarea {
+    /*height: 360px;*/
+    height: 32vh;
+    width: 496px;
+}
+
+.contactslink, .productlink {
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.editinput:focus {
+    background-color: #fff6ac;
+    color: #000;
+    font-weight: bold;
+}
+

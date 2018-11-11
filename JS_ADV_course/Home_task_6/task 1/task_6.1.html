@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSAdv_Task_6.2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-
+beta.3/css/bootstrap.min.css" integrity="sha384-
+Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/all.css">
+    <style>
+        .form-wrap {
+            margin: auto;
+            padding: 20px;
+            max-width: 800px
+        }
+
+        .border-red {
+            border-color: red;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="form-wrap">
+    <form class="my-form" action="">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Имя">
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" name="phone" class="form-control" placeholder="Телефон: +7(000)000-0000">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="email" name="email" class="form-control" placeholder="E-mail">
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" name="text" class="form-control" placeholder="Произвольный текст">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <select name="city" class="form-control form-city__select"></select>
+            </div>
+            <div class="form-group col-md-6">
+         <!--c type="date" нет танцев с бубном и datepicker получается интересней, чем в jqueryui-->
+         <!--<input type="date" name="text" class="form-control form-birthdate__input" placeholder="Дата рождения">-->
+                <input type="text" class="form-control form-birthdate__input" placeholder="Дата рождения">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="FormFeedback.js"></script>
+<script>
+    window.onload = () => {
+
+        $('.form-birthdate__input').datepicker({
+            firstDay: 1,
+            dateFormat: 'dd.mm.yy',
+            dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+            monthNames: ['Январь', 'Февраль', 'Март', 'Апрель',
+            'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
+            'Октябрь', 'Ноябрь', 'Декабрь']
+        });
+
+
+        const formFB = document.querySelector('.my-form');
+        const inptName = document.getElementsByName('name')[0];
+        const inptPhone = document.getElementsByName('phone')[0];
+        const inptEmail = document.getElementsByName('email')[0];
+        const inptText = document.getElementsByName('text')[0];
+        const selectCity = formFB.querySelector('.form-city__select');
+        const inptAll = formFB.querySelectorAll('.form-control'); //массив со всеми нашими инпутами
+        const borderRedStyle = 'border-red';
+
+        let form = new FormFeedback(formFB, inptName, inptPhone, inptEmail,
+            inptText, selectCity, inptAll, borderRedStyle);
+        form.formFB.addEventListener('submit', event => form.sendFormData(event));
+    }
+</script>
+</body>
+</html>

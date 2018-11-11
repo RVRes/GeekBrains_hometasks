@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Surfhouse</title>
+    <link rel="icon" href="images/surfhouse_logo.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
+          integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <link rel="stylesheet" href="images/sprites/sprite.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!--TODO(Решетников) 1) На всех страницах сайта:
+1.1) Добавить все нехватающие стили в подвале сайта, расположить все элементы в соответствии с макетом.
+2) На главной странице сайта:
+2.1) Добавить все нехватающие стили в шапке сайта.
+2.2) Добавить минимум 4 превью товара.
+3) Страница каталога:
+3.1) Добавить хлебные крошки.
+3.2) Добавить несколько превью товаров.
+4) Страница просмотра товара каталога:
+4.1) Создать блоки в соответствии с макетом для описаний, характеристик и т.д.
+4.2) Расположить картинку в соответствии с макетом.
+5) * Добавить произвольные стили на ваше усмотрение.
+6) * Добавить эффект наведения на товары на странице каталога.
+7) * Присвоить нажатие на активные элементы сайта.
+
+Задачи со * предназначены для продвинутых учеников, которым мало сделать обычное ДЗ.-->
+
+
+<!-- Общая идея: 1. Начал использовать БЭМ методологию. (Проверьте, пожалуйста, насколько правильно).
+2. Начал использовать блоки layout - они отвечают за геометрию, расположение и подложки основных блоков.
+3. Блок container отвечает за ограничения контента по ширине и точку отсчета для блоков с position: absolute
+4. Блоки layout и container первыми описаны в css, для возможного переопределения свойств каскадированием
+5. Основной блок вверху - slider. Header лежит над ним и не имеет размеров.
+6. Работу со шрифтами "позаимствовал" у вас, тк не знал, что можно подставлять шрифт от font-weight
+7. Картинку слайдера прикрутил не к body, а к layout слайдера - так, вроде, честнее, раз уж ввел блоки разметки
+8. В товарах я использовал не background-image, а просто img. В css оставил свойства для background. Насколько это валидно? И как сделать правильнее?
+9. Ярлыки hot и new пока не разобрался, как делать (бездумно копировать не стал).
+10. В socials-bar__link у меня получилось отцентровать иконки только с помощью флекс, подскажите, пожалуйста, как их выровнять без flex. (не получилось)
+
+
+-->
+
+<body>
+<div class="layout">
+    <div class="layout__header">
+        <div class="container">
+            <header class="header">
+                <img src="images/surfhouse_logo.png" alt="surfhouse_logo.png" class="header__logo">
+                <div class="header__social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div class="layout__slider">
+        <div class="container">
+            <div class="slider">
+                <div class="slider__left-slide">
+                    <h3 class="slider__left-slide-heading">WELCOME TO SURFHOUSE</h3>
+                    <p class="slider__left-slide-text">The only online store you will ever need for all your windsurfing
+                        and kitesurf-ing and SUP needs
+                    </p>
+                </div>
+                <div class="slider__main-slide">
+                    <h3 class="slider__main-slide-heading">JP FUNRIDE 2014</h3>
+                    <p class="slider__main-slide-text">Super easy going freeride boards based on
+                        the X-Cite Ride shape concept with additional control and super easy jibing.
+                    </p>
+                    <button class="slider__button-buy">BUY NOW!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layout__center">
+        <div class="container">
+            <div class="layout__sidebar">
+                <nav class="sidebar-menu">
+                    <h4 class="sidebar-menu__heading">Menu</h4>
+                    <ul class="sidebar-menu__list">
+                        <li class="sidebar-menu__item">
+                            <a href="#" class="sidebar-menu__link">About</a>
+                        </li>
+                        <li class="sidebar-menu__item">
+                            <a href="#" class="sidebar-menu__link">Apparel</a>
+                        </li>
+                        <li class="sidebar-menu__item">
+                            <a href="#" class="sidebar-menu__link">Surf apparel</a>
+                        </li>
+                        <li class="sidebar-menu__item">
+                            <a href="#" class="sidebar-menu__link">Windsurf</a>
+                        </li>
+                        <li class="sidebar-menu__item">
+                            <a href="#" class="sidebar-menu__link">Kitesurf</a>
+                        </li>
+                        <li class="sidebar-menu__item">
+                            <a href="#" class="sidebar-menu__link">Accessorries</a>
+                        </li>
+                        <li class="sidebar-menu__item">
+                            <a href="#" class="sidebar-menu__link">Sale</a>
+                        </li>
+                        <li class="sidebar-menu__item">
+                            <a href="#" class="sidebar-menu__link">Brands</a>
+                        </li>
+                        <li class="sidebar-menu__item">
+                            <a href="#" class="sidebar-menu__link">Blog</a>
+                        </li>
+                        <li class="sidebar-menu__item">
+                            <a href="#" class="sidebar-menu__link">Gadgets</a>
+                        </li>
+                        <li class="sidebar-menu__item">
+                            <a href="#" class="sidebar-menu__link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="sidebar__bottom-slide">
+                    <h3 class="sidebar__bottom-slide-heading">Now is open!</h3>
+                </div>
+            </div>
+            <div class="layout__center-mainbody">
+                <div class="center-mainbody">
+                    <!--new products-->
+                    <div class="center-mainbody__items">
+                        <div class="center-mainbody__items-heading">new products</div>
+                        <div class="center-mainbody__items-wrapper">
+                            <div class="center-mainbody__item">
+                                <img src="images/item1.jpg" alt="F2 Inflatable SUP Board"
+                                     class="center-mainbody__item-image" title="F2 Inflatable SUP Board">
+                                <div class="center-mainbody__corner_new"></div>
+                                <div class="center-mainbody__item-name">F2 Inflatable SUP Board</div>
+                                <div class="center-mainbody__item-newprice">€.499.00</div>
+                                <div class="center-mainbody__item-oldprice"></div>
+                            </div>
+                            <div class="center-mainbody__item">
+                                <img src="images/item2.jpg" alt="GA KITES Blend Kiteboard 2018"
+                                     class="center-mainbody__item-image" title="GA KITES Blend Kiteboard 2018">
+                                <div class="center-mainbody__corner_hot"></div>
+                                <div class="center-mainbody__item-name">GA KITES Blend Kiteboard 2018</div>
+                                <div class="center-mainbody__item-newprice">€.599.00</div>
+                                <div class="center-mainbody__item-oldprice">€.1089.00</div>
+                            </div>
+                            <div class="center-mainbody__item">
+                                <img src="images/item3.jpg" alt="NP Womens neoprene top SPARK"
+                                     class="center-mainbody__item-image" title="NP Womens neoprene top SPARK">
+                                <div class="center-mainbody__item-name">NP Womens neoprene top SPARK</div>
+                                <div class="center-mainbody__item-newprice">€.93.00</div>
+                                <div class="center-mainbody__item-oldprice"></div>
+                            </div>
+                            <div class="center-mainbody__item">
+                                <img src="images/item4.jpg" alt="GA KITES Flash Kite Surfboard 2018"
+                                     class="center-mainbody__item-image" title="GA KITES Flash Kite Surfboard 2018">
+                                <div class="center-mainbody__item-name">GA KITES Flash Kite Surfboard 2018</div>
+                                <div class="center-mainbody__item-newprice">€.530.00</div>
+                                <div class="center-mainbody__item-oldprice"></div>
+                            </div>
+                            <div class="center-mainbody__item">
+                                <img src="images/item5.jpg" alt="UNIFIBER Maverick Complete"
+                                     class="center-mainbody__item-image" title="UNIFIBER Maverick Complete">
+                                <div class="center-mainbody__item-name">UNIFIBER Maverick Complete</div>
+                                <div class="center-mainbody__item-newprice">€.960.00</div>
+                                <div class="center-mainbody__item-oldprice"></div>
+                            </div>
+                            <div class="center-mainbody__item">
+                                <img src="images/item6.jpg" alt="CRAZYFLY Kite SCULP 2018"
+                                     class="center-mainbody__item-image" title="CRAZYFLY Kite SCULP 2018">
+                                <div class="center-mainbody__item-name">CRAZYFLY Kite SCULP 2018</div>
+                                <div class="center-mainbody__item-newprice">€.1229.00</div>
+                                <div class="center-mainbody__item-oldprice"></div>
+                            </div>
+                            <div class="center-mainbody__item">
+                                <img src="images/item7.jpg" alt="DAKINE Surface Vest 2017"
+                                     class="center-mainbody__item-image" title="DAKINE Surface Vest 2017">
+                                <div class="center-mainbody__item-name">DAKINE Surface Vest 2017</div>
+                                <div class="center-mainbody__item-newprice">€.85.00</div>
+                                <div class="center-mainbody__item-oldprice"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--top products-->
+                    <div class="center-mainbody__items">
+                        <div class="center-mainbody__items-heading">top products</div>
+                        <div class="center-mainbody__items-wrapper">
+                            <div class="center-mainbody__item">
+                                <img src="images/item8.jpg" alt="GAASTRA Windsurf Sail HYBRID 2018"
+                                     class="center-mainbody__item-image" title="GAASTRA Windsurf Sail HYBRID 2018">
+                                <div class="center-mainbody__item-name">GAASTRA Windsurf Sail HYBRID 2018</div>
+                                <div class="center-mainbody__item-newprice">€.529.00</div>
+                                <div class="center-mainbody__item-oldprice">€.799.00</div>
+                            </div>
+                            <div class="center-mainbody__item">
+                                <img src="images/item9.jpg" alt="DAKINE Vest Kite Kicker 2015"
+                                     class="center-mainbody__item-image" title="DAKINE Vest Kite Kicker 2015">
+                                <div class="center-mainbody__item-name">DAKINE Vest Kite Kicker 2015</div>
+                                <div class="center-mainbody__item-newprice">€.99.75</div>
+                                <div class="center-mainbody__item-oldprice"></div>
+                            </div>
+                            <div class="center-mainbody__item">
+                                <img src="images/item10.jpg" alt="LOCOSYS GPS Speed Device GW-60"
+                                     class="center-mainbody__item-image" title="LOCOSYS GPS Speed Device GW-60">
+                                <div class="center-mainbody__item-name">LOCOSYS GPS Speed Device GW-60</div>
+                                <div class="center-mainbody__item-newprice">€.199.00</div>
+                                <div class="center-mainbody__item-oldprice"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sale products-->
+                    <div class="center-mainbody__items">
+                        <div class="center-mainbody__items-heading">sale products</div>
+                        <div class="center-mainbody__items-wrapper">
+                            <div class="center-mainbody__item">
+                                <img src="images/item11.jpg" alt="TABOU Windsurf Board ROCKET WIDE"
+                                     class="center-mainbody__item-image" title="TABOU Windsurf Board ROCKET WIDE">
+                                <div class="center-mainbody__item-name">TABOU Windsurf Board ROCKET WIDE</div>
+                                <div class="center-mainbody__item-newprice">€.1699.00</div>
+                                <div class="center-mainbody__item-oldprice">€.1999.00</div>
+                            </div>
+                            <div class="center-mainbody__item">
+                                <img src="images/item12.jpg" alt="GAASTRA Complete Rig HYBRID HD 2017"
+                                     class="center-mainbody__item-image" title="GAASTRA Complete Rig HYBRID HD 2017">
+                                <div class="center-mainbody__item-name">GAASTRA Complete Rig HYBRID HD 2017</div>
+                                <div class="center-mainbody__item-newprice">€.579.00</div>
+                                <div class="center-mainbody__item-oldprice">€.819.00</div>
+                            </div>
+                            <div class="center-mainbody__item">
+                                <img src="images/item13.jpg" alt="NP Womens wetsuit SPICE 3/2mm 2016"
+                                     class="center-mainbody__item-image" title="NP Womens wetsuit SPICE 3/2mm 2016">
+                                <div class="center-mainbody__item-name">NP Womens wetsuit SPICE 3/2mm 2016</div>
+                                <div class="center-mainbody__item-newprice">€.169.00</div>
+                                <div class="center-mainbody__item-oldprice">€.299.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layout__bottom">
+        <div class="container">
+            <div class="brands-bar">
+                <a href="#" class="brands-bar__image" style="background-image:url('images/brands/brand1.png');"></a>
+                <a href="#" class="brands-bar__image" style="background-image:url('images/brands/brand2.png');"></a>
+                <a href="#" class="brands-bar__image" style="background-image:url('images/brands/brand3.png');"></a>
+                <a href="#" class="brands-bar__image" style="background-image:url('images/brands/brand4.png');"></a>
+                <a href="#" class="brands-bar__image" style="background-image:url('images/brands/brand5.png');"></a>
+                <a href="#" class="brands-bar__image" style="background-image:url('images/brands/brand6.png');"></a>
+                <a href="#" class="brands-bar__image" style="background-image:url('images/brands/brand7.png');"></a>
+                <a href="#" class="brands-bar__image" style="background-image:url('images/brands/brand8.png');"></a>
+            </div>
+            <div class="instagram-feed">
+                <div class="instagram-feed__heading">
+                    <i class="fab fa-instagram fa-2x"></i>
+                    <span class="instagram-feed__text">Instagram feed:</span>
+                    <span>#surfhouse</span>
+                </div>
+                <div class="instagram-feed__images">
+                    <div class="instagram-feed__image" style="background-image:url('images/insta/insta1.jpg');"></div>
+                    <div class="instagram-feed__image" style="background-image:url('images/insta/insta2.jpg');"></div>
+                    <div class="instagram-feed__image" style="background-image:url('images/insta/insta3.jpg');"></div>
+                    <div class="instagram-feed__image" style="background-image:url('images/insta/insta4.jpg');"></div>
+                    <div class="instagram-feed__image" style="background-image:url('images/insta/insta5.jpg');"></div>
+                    <div class="instagram-feed__image" style="background-image:url('images/insta/insta6.jpg');"></div>
+                </div>
+            </div>
+            <div class="socials-bar">
+                <a class="socials-bar__link" style="background-color:  #3b5997;"
+                   href="#"><i class="fab fa-facebook-f fa-4x"></i></a>
+                <a class="socials-bar__link" style="background-color:  #3fccfd;"
+                   href="#"><i class="fab fa-twitter fa-4x"></i></a>
+                <a class="socials-bar__link" style="background-color:  #cb2027;"
+                   href="#"><i class="fab fa-pinterest fa-4x"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="layout__footer-top">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-top__column">
+                    <div class="footer-top__column-heading">Category</div>
+                    <a class="footer-top__column-link" href="#">Home</a>
+                    <a class="footer-top__column-link" href="#">About us</a>
+                    <a class="footer-top__column-link" href="#">Eshop</a>
+                    <a class="footer-top__column-link" href="#">Features</a>
+                    <a class="footer-top__column-link" href="#">New collections</a>
+                    <a class="footer-top__column-link" href="#">Blog</a>
+                    <a class="footer-top__column-link" href="#">Contact</a>
+                </div>
+                <div class="footer-top__column">
+                    <div class="footer-top__column-heading">Our Account</div>
+                    <a class="footer-top__column-link" href="#">Your Account</a>
+                    <a class="footer-top__column-link" href="#">Personal information</a>
+                    <a class="footer-top__column-link" href="#">Addresses</a>
+                    <a class="footer-top__column-link" href="#">Discount</a>
+                    <a class="footer-top__column-link" href="#">Orders history</a>
+                    <a class="footer-top__column-link" href="#">Addresses</a>
+                    <a class="footer-top__column-link" href="#">Search Terms</a>
+                </div>
+                <div class="footer-top__column">
+                    <div class="footer-top__column-heading">Our Support</div>
+                    <a class="footer-top__column-link" href="#">Site Map</a>
+                    <a class="footer-top__column-link" href="#">Search Terms</a>
+                    <a class="footer-top__column-link" href="#">Advansed Search</a>
+                    <a class="footer-top__column-link" href="#">Mobile</a>
+                    <a class="footer-top__column-link" href="#">Contact Us</a>
+                    <a class="footer-top__column-link" href="#">Mobile</a>
+                    <a class="footer-top__column-link" href="#">Addresses</a>
+                </div>
+                <div class="footer-top__column">
+                    <div class="footer-top__column-heading">Newsletter</div>
+                    <span>Join thousands of other people subscribe to our news</span>
+                    <div class="footer-top__input-subscribe">
+                        <input type="email" name="email" placeholder="INSERT EMAIL">
+                        <button>Submit</button>
+                    </div>
+                    <div class="footer-top__paySystems">
+                        <a href="#"><i class="icon icon-1aex"></i></a>
+                        <a href="#" class="icon icon-2mastercard"></a>
+                        <a href="#" class="icon icon-3maestero"></a>
+                        <a href="#" class="icon icon-4paypal"></a>
+                        <a href="#" class="icon icon-5discover"></a>
+                        <a href="#" class="icon icon-6visa_straight"></a>
+                    </div>
+
+                </div>
+                <div class="footer-top__column">
+                    <div class="footer-top__column-heading">About Us</div>
+                    <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</span>
+                    <div class="footer-top__contact">
+                        <span>Phone:</span>
+                        <span>1-999-342-9876</span>
+                    </div>
+                    <div class="footer-top__contact">
+                        <span>e-mail:</span>
+                        <a href="mailto:info@surfhouse.com">info@surfhouse.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layout__footer-bottom">
+        <div class="container">
+            <div class="footer-bottom">
+                <span>&copy; 2014  SURFHOUSE. All rights reserved - Designed by theuncreativelab.com</span>
+                <div class="footer-bottom__social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-tumblr"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-rss"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+#informer {
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+}
+#informer .informerItem {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  text-align: center;
+  min-height: 30px;
+  line-height: 30px;
+  color: #ffffff;
+  font-weight: 700;
+  background-color: #ececec;
+  cursor: pointer;
+}
+#informer .informerItem.error {
+  background-color: rgba(255, 0, 0, 0.8);
+  border-top: 1px solid rgba(220, 20, 60, 0.8);
+}
+#informer .informerItem.success {
+  background-color: rgba(154, 205, 50, 0.8);
+  border-top: 1px solid rgba(107, 142, 35, 0.8);
+}
+#informer .informerItem.warning {
+  background-color: rgba(255, 165, 0, 0.8);
+  border-top: 1px solid rgba(255, 140, 0, 0.8);
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo Classes</title>
+    <style>
+        li{
+            height: 2em;
+            border: thin solid;
+            margin: 1em;
+        }
+        input{
+            height:2em;
+        }
+
+
+        li:hover{
+             background-color: aqua;
+         }
+
+
+        li:hover input{
+            background-color: black;
+        }
+
+        li:active{
+            background-color: red;
+        }
+        input:focus{
+            background-color: green;
+        }
+
+
+        a:visited{
+            color: violet;
+            font-size: 30px;
+        }
+        a:link{
+            text-decoration: none;
+        }
+        a:hover {
+            color: #A0000F;
+        }
+
+
+    
+    </style>
+</head>
+<body>
+<ul>
+    <li><input type="text" placeholder="text"></li>
+    <li><input type="text" placeholder="text"></li>
+    <li><input type="text" placeholder="text"></li>
+</ul>
+
+<a href="pseudo_element.html">Ссылка 1</a>
+
+
+</body>
+</html>

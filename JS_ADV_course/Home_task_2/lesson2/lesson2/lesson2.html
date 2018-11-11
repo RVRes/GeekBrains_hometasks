@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="data"></div>
+<button id="get">Get data</button>
+<script>
+    //JSON basics
+    //
+    // let userJson = '{"name":"Anna", "age": 25, "isAdmin": true, "dateToday": "2018-10-19"}';
+    //
+    // console.log(userJson);
+    // let user = JSON.parse(userJson, (key, value) => {
+    //     console.log(key, value);
+    //     if (key === 'dateToday'){
+    //         value = new Date(value);
+    //     }
+    //     return value;
+    // });
+    // console.log(user);
+    // user.address = {
+    //     city: 'Saint Petersburg',
+    //     postalCode: '199999'
+    // };
+    // console.log(user);
+    // let jsonUser = JSON.stringify(user, ['age', 'address', 'city', 'postalCode'], 4);
+    // console.log(jsonUser)
+
+    window.onload = () => {
+        //ES5
+        // document.getElementById('get').addEventListener('click', function () {
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open('GET', 'tel.json', true); // true - async request
+        //     xhr.onreadystatechange = function () {
+        //         console.log(xhr.readyState);
+        //         // 0 - запрос на инициализации
+        //         // 1 - загрузка данных на сервер
+        //         // 2 - запрос принят сервером
+        //         // 3 - идет обмен
+        //         // 4 - запрос выполнен
+        //         if (xhr.readyState !== 4){
+        //             return; // выход в случае ошибки
+        //         }
+        //         if (xhr.status !== 200) {
+        //             console.log('Error', xhr.status, xhr.statusText)
+        //         } else {
+        //             console.log('ok', xhr.responseText);
+        //             let dataObj = JSON.parse(xhr.responseText);
+        //             let block = document.getElementById('data');
+        //             block.innerHTML = `Phone number ${dataObj.tel} (${dataObj.title})`;
+        //         }
+        //
+        //     };
+        //     xhr.send();
+        // });
+
+        //ES6
+        // CORS - запрет запросов на сторонние ресурсы
+        // document.getElementById('get').addEventListener('click', () => {
+        //     let block = document.getElementById('data');
+        //     fetch('tel.json')
+        //         .then(result => {
+        //             console.log(result);
+        //             return result.json();
+        //         })
+        //         .then(data => {
+        //             console.log(data);
+        //             block.innerHTML = `Phone number ${data.tel} (${data.title})`;
+        //         })
+        //         .catch(error => {
+        //             console.log(error);
+        //         });
+        // });
+
+        // Promises
+        let getData = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([523, 356, 487]);
+            }, 1500);
+        });
+        let getJob = userID => {
+          return new Promise((resolve, reject) => {
+             setTimeout(ID => {
+                 let userData = {
+                     name: 'Ann',
+                     job: 'full-stack developer'
+                 };
+                 resolve(`User with ${ID} is ${userData.job}`);
+             }, 1500, userID);
+          });
+        };
+        // getData
+        //     .then(ID => {
+        //         console.log(ID);
+        //         return getJob(ID[2]);
+        //     })
+        //     .then(job => console.log(job))
+        //      .catch(error => console.log(error)) ;
+        //Async/await
+        async function getJobAW() {
+            let IDs = await getData;
+            console.log(IDs);
+            let job = await getJob(IDs[2]);
+            console.log(job);
+            return job;
+        }
+        // getJobAW();
+        let a = getJobAW();
+        console.log(a);
+    }
+
+
+</script>
+</body>
+</html>

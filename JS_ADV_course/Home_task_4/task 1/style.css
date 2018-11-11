@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 30px;
+}
+
+.blueprints {
+    display: none;
+}
+
+.tabs {
+    max-width: 700px;
+    margin: 0 0 30px;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    position: relative;
+    margin: -1px 0 0 -1px;
+}
+
+.menu li {
+    padding: 10px 20px;
+    margin: 1px 0 0 1px;
+    background: #5f80af;
+    color: #FFF;
+    position: relative;
+    border: solid #5F80AF;
+    border-width: 2px 2px 0;
+    text-align: center;
+}
+
+.menu li:not(.active):hover {
+    background: #7b92af;
+    border-color: #7b92af;
+}
+
+.menu .active {
+    background: #FFF;
+    color: #000;
+    border-color: #5F80AF;
+    border-bottom: white;
+}
+
+.content {
+    display: none;
+    background: #FFF;
+    border: 2px solid #5F80AF;
+    padding: 7px 15px;
+}
+
+.content.active {
+    display: block;
+}
+
+.vertical .menu {
+    float: left;
+    display: block;
+}
+
+.vertical .menu li {
+    float: none;
+    border-width: 2px 0 2px 2px;
+}
+
+.vertical .content {
+    overflow: hidden;
+}

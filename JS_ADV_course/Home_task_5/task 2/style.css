@@ -1,0 +1,26 @@
+input, textarea {
+    width: 98%;
+    margin: 10px 0;
+    display: block;
+    border: 1px solid;
+    padding: 10px;
+}
+
+#feedback {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.comment {
+    padding: 10px;
+    border: 4px double black;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.not-approved {
+    border: 4px double red;
+}

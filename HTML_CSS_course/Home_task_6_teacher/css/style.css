@@ -1,0 +1,566 @@
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/RalewayRegular.ttf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/RalewayBold.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/RalewayExtraBold.ttf");
+    font-weight: 800;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/RobotoLight.ttf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/RobotoMedium.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/RobotoBold.ttf");
+    font-weight: 900;
+}
+body {
+    margin: 0;
+    background: url("../img/background.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.top {
+    width: 100%;
+    height: 700px;
+/*    background-color: #abeafa;*/
+    
+    float: left;
+}
+
+.image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header {
+    height: 200px;
+}
+
+.header .social {
+    position: absolute;
+    right: 65px;
+    top: 50px;
+}
+
+.social i {
+    margin-left: 5px;
+    color: white;
+    font-size: 17px;
+    width: 17px;
+    text-align: center;
+}
+
+.header .social i:hover {
+    color: #333;
+}
+
+.middle {
+    width: 100%;
+    min-height: 300px;
+    background-color: #f8f8f8;
+    float: left;
+}
+
+.content {
+    margin: 0 auto;
+    width: 1170px;
+    position: relative;
+    
+/*    background-color: bisque;*/
+    min-height: 30px;
+}
+
+.part {
+    position: relative;
+}
+
+img.logo {
+    position: absolute;
+    left: 69px;
+    top: 25px;
+}
+
+.middle .content {
+    margin-top: -20px;
+}
+
+.hotOffer {
+    height: 100px;
+}
+
+.welcome {
+    width: 270px;
+    height: 300px;
+    background-color:  #fff51f;
+    position: absolute;
+    top: 135px;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    position: absolute;
+    top: 58px;
+    left: 27px;
+    line-height: 30px;
+    letter-spacing: -2px;
+}
+
+.welcome p {
+    position: absolute;
+    top: 142px;
+    left: 24px;
+    width: 219px;
+    font-size: 18px;
+    line-height: 14px;
+    word-break: break-all;
+}
+
+.offer {
+    position: absolute;
+    width: 313px;
+    height: 169px;
+    right: 109px;
+    top: 44px;
+    color:  #fff51f;
+    font-family: "Raleway", sans-serif;
+}
+
+.offer .title{
+    font-size: 48px;
+    margin: 0;
+    line-height: 34px; 
+    font-weight: bold;
+}
+
+.offer p {
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 5px;
+}
+
+button {
+    cursor: pointer;
+    border-style: none;
+}
+
+button:hover{
+    border-style: inset;
+}
+
+.buynow{
+    width: 124px;
+    height: 49px;
+    background-color: #fff51f;
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    position: absolute;
+    top: 230px;
+    left: 2px;
+    
+}
+
+.products {
+    display: flex;
+    justify-content: space-between;
+}
+.aside_left {
+    width: 270px;
+}
+
+.productList {
+    width: 870px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    background-color: #26d2fc;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu .title{
+    background-color:  #333333;
+    height: 66px;
+    line-height: 66px;
+    color: white;
+    padding-left: 40px;
+}
+
+.menu a{
+    height: 37px;
+    line-height: 37px;
+    text-decoration: none;
+    color: black;
+    padding-left: 40px;
+}
+
+.menu a:hover{
+    background-color:  #333333;
+    color: white;
+}
+
+.nowisopen {
+    height: 300px;
+    position: relative;
+    background-color:  #e0e0e0;
+    margin-top: 30px;
+    background: url("../img/nowisopen.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.nowisopen::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255,255,255,.4);
+}
+
+.nowisopen p {
+    position: absolute;
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    width: 109px;
+    top: 90px;
+    right: 20px;
+    font-style: italic;
+    line-height: 36px;
+}
+
+.productList .part:last-child{
+    margin-bottom: 0;
+}
+
+.productList .part{
+    background-color:  #f8f8f8;
+    margin-bottom: 17px;
+}
+
+.productList .title{
+    height: 53px;
+    font-size: 22px;
+    font-family: "Roboto", sans-serif;
+    color: #707070;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-style: italic;
+    padding-top: 26px;
+    padding-left: 25px;
+}
+
+.productItem{
+    background-color: white;
+    width: 270px;
+    height: 320px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: #333;
+}
+
+.productItem:nth-child(3n){
+    margin-right: 0;
+}
+
+.productItem .image {
+    background-color:  #eaeaea;
+    height: 235px;
+    margin: 10px;
+}
+
+.productItem .corner {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    top: 0;
+    right: 0; 
+    font-size: 9px;
+}
+
+.productItem .corner.new {
+    background-image: url("../img/Corner.png");
+}
+
+.productItem .corner::after {
+    position: absolute;
+    right: 4px;
+    top: 9px
+}
+
+.productItem .corner.new::after {
+    content: 'NEW';
+    color: white;
+}
+
+.productItem .corner.hot {
+    background-image: url("../img/Corner_y.png");
+}
+
+.productItem .corner.hot::after {
+    content: 'HOT';
+    color: black;
+}
+
+.productItem .productName {
+    margin: 15px;
+    font-style: italic;
+    font-size: 14px;
+    width: 140px;
+    max-height: 2.5em;
+    overflow: hidden;
+    left: 27px
+}
+
+.productItem .cost {
+    position: absolute;
+    right: 20px;
+    bottom: 35px;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.productItem .oldCost {
+    position: absolute;
+    color:  #e24602;
+    right: 20px;
+    bottom: 18px;
+    font-size: 14px;
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+.content>.brands {
+    height: 160px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content>.brands .item{
+    width: 150px;
+    height: 70px;
+    margin: 8px;
+}
+
+.content>.insta {
+    height: 325px;
+}
+
+.content>.insta>.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-top: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    color: #333;
+}
+.content>.insta>.title>.feed {
+    font-size: 22px;
+    margin: .5em;
+}
+
+.content>.insta>.photos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content>.insta>.photos>.item {
+    width: 185px;
+    height: 185px;
+    box-shadow: 0 0 0 10px white inset; 
+}
+
+.content>.insta>.photos>.item:hover {
+    box-shadow: 0 0 0 10px #3fccfd inset; 
+}
+
+.content>.bigSocial {
+    display: flex;
+    
+}
+
+.content>.bigSocial>a{
+    height: 150px;
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+
+.content>.bigSocial>.facebook{
+    background-color:  #3b5997;
+}
+
+.content>.bigSocial>.twitter{
+    background-color:  #3fccfd;
+}
+
+.content>.bigSocial>.pinterest{
+    background-color:  #cb2027;
+}
+
+.bottom {
+    height: 300px;
+    width: 100%;
+    background-color:  #373737;
+    float: left;
+}
+
+.bottom>.content{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+.bottom>.content>.part {
+    margin-top: 75px;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom>.content>.part>.title {
+    font-size: 18px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+}
+
+.bottom>.content>.narrow>.title {
+    margin-bottom: 28px;
+}
+
+.bottom>.content>.part>a,
+.bottom>.content>.part>span,
+.bottom>.content>.part>div{
+    color: inherit;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+}
+
+.bottom>.content>.part>a {
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.bottom>.content>.part>a:hover{
+    text-decoration: underline;
+}
+
+.bottom .subscribe{
+    margin-top: 20px;
+    height: 30px;
+}
+
+.bottom .subscribe input[type="email"]{
+    background-color:  #fff51f;
+    width: 180px;
+    height: inherit;
+    border: none;
+}
+
+.bottom .subscribe input::-webkit-input-placeholder {
+    font-size: 12px;
+    padding: 20px;
+}
+
+.bottom .subscribe button {
+    height: inherit;
+    width: 71px;
+    background-color: black;
+    color: white;
+}
+
+.bottom .paySystems {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.bottom .paySystems>.item{
+    width: 36px;
+    height: 22px;
+    background-color: aliceblue;
+}
+
+.bottom .paySystems>.ps_americanExpress {
+    background-image: url("../img/aex.png");
+}
+.bottom .paySystems>.ps_masterCard {
+    background-image: url("../img/mastercard.png");
+}
+.bottom .paySystems>.ps_maestro {
+    background-image: url("../img/maestero.png");
+}
+.bottom .paySystems>.ps_discover {
+    background-image: url("../img/discover.png");
+}
+.bottom .paySystems>.ps_payPal {
+    background-image: url("../img/paypal.png");
+}
+.bottom .paySystems>.ps_visa {
+    background-image: url("../img/visa_straight.png");
+}
+
+.bottom .contact {
+    margin-top: 12px;
+}
+
+.bottom .contact span:first-child{
+    padding-right: 15px;
+}
+
+.bottom .contact a {
+    color:  #faef03;
+    text-decoration: none;
+}
+
+.footer{
+    float: left;
+    width: 100%;
+    height: 47px;
+    background-color: #333;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 47px;
+}
+
+.footer .social {
+    position: absolute;
+    right: 20px;
+    top: 0;
+}

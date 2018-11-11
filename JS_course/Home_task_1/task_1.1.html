@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_Task_1</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let tempCelcius = +prompt("Введите температуру в градусах Цельсия: ");
+    let tempFarengeyt = (9 / 5) * tempCelcius + 32;
+    if (isNaN(tempFarengeyt)) {
+        alert("Так не пойдет! Введите, пожалуйста, число.");
+    } else {
+        alert("Температура в градусах по Фаренгейту равна: " + tempFarengeyt.toFixed(1) + " градусов.");
+    }
+</script>
+</body>
+</html>

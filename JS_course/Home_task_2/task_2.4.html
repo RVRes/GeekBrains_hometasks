@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_Task_2.4</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    /* 4. Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя параметрами.
+     Обязательно использовать оператор return.
+     */
+    let a = +prompt('Введите "a", произвольное число: ');
+    let b = +prompt('Введите "b", произвольное число: ');
+    let operationSelector = +prompt('Введите действие: 1.Сложение, 2.Вычитание, 3.Деление, 4.Умножение');
+
+    switch (operationSelector) {
+        case 1:
+            alert(`Сумма ${a} и ${b} равна: ${getSum(a, b)}`);
+            break;
+        case 2:
+            alert(`Разность ${a} и ${b} равна: ${getDifference(a, b)}`);
+            break;
+        case 3:
+            alert(`${a} разделить на ${b} равно: ${getDivision(a, b)}`);
+            break;
+        case 4:
+            alert(`${a} умножить на ${b} равно: ${getMultiplication(a, b)}`);
+            break;
+        default:
+            alert(`Неправильно выбрано действие`);
+    }
+
+
+    function getSum(a, b) {
+        return a + b;
+    }
+
+    function getDifference(a, b) {
+        return a - b;
+    }
+
+    function getMultiplication(a, b) {
+        return a * b;
+    }
+
+    function getDivision(a, b) {
+        return Math.round(a / b * 100) / 100;
+    }
+
+</script>
+</body>
+</html>

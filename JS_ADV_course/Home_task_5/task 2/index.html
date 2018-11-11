@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_ADV_Task_5.2_Reshetnikov</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="feedback"></div>
+<hr/>
+<input type="text" id="author" placeholder="Имя">
+<textarea id="text" rows="10" placeholder="Отзыв"></textarea>
+<button type="submit" id="submit">Добавить отзыв</button>
+</form>
+<script src="jquery-3.3.1.js"></script>
+<script src="Feedback.js"></script>
+<script>
+    $(document).ready(() => {
+        let fb = new Feedback('feedback.json');
+        // Обработчик Submit
+        $('#submit').on('click', () => {
+            let $author = $('#author').val();
+            let $comment = $('#text').val();
+            if (!$author || !$comment) {
+                return;
+            }
+            fb.addComment($author, $comment, false);
+            $('#author').val("");
+            $('#text').val("");
+        });
+
+        // Обработчик Delete
+        $('#feedback').on('click', '.removeCommentBtn', (e) => {
+            fb.removeComment(e.target);
+        });
+
+        // Обработчик Approve
+        $('#feedback').on('click','.approveCommentBtn', (e) => {
+            fb.approveComment(e.target);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 .idea
 *.rar
 *.zip
+desktop.ini
 __MACOSX
 ._.DS_Store
 node_modules

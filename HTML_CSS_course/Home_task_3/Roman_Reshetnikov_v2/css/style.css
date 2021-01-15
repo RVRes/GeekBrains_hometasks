@@ -1,0 +1,51 @@
+body {
+    background-color: #f8f8f8;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header a {
+    font-size: 16px;
+    color: #2A2A7B;
+    font-family: Arial, serif;
+
+}
+
+main>a {
+    position: relative;
+}
+
+main>a:hover::after{
+    content: '';
+    display: inline-flex;
+    width: 200px;
+    height: 200px;
+    border: solid red;
+    /*border-radius: 50%;*/
+    /*color: #fff;*/
+
+    background: url('../images/681948_a.jpg') no-repeat;
+    background-size: 200px;
+
+    position: absolute;
+    left: 110%;
+    /*margin-left: -30px;*/
+    top: -200px;
+    /*size: 10%;*/
+    margin: 5px;
+}
+
+/*content: "../img/services_ball.png";*/
+/*display: block;*/
+/*width: 60px;*/
+/*height: 60px;*/
+/*border-radius: 50%;*/
+/*color: #fff;*/
+/*font-family: FontAwesome;*/
+/*background: #23aae2;*/
+/*position: absolute;*/
+/*left: 50%;*/
+/*margin-left: -30px;*/
+/*top: -30px;*/
